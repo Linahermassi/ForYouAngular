@@ -9,9 +9,10 @@ import { ContractComponent } from './Components/contract/contract.component';
 
 const routes: Routes = [
   {path:'homepage',component:HomePageComponent},
-  {path:'menu',component:MenuComponent,children :
-  [{path:'contract',component:ContractComponent},
-  {path:'addcontract',component:AddContractComponent},]},
+  {path:'menu',component:MenuComponent,children :[
+  {path:'contract',component:ContractComponent},
+  {path:'addcontract',component:AddContractComponent},
+]},
   {path:'contact',component:ContactComponent},
   {path:'',redirectTo:'homepage',pathMatch:'full'},
   {path:'**',component:NotFoundComponent}
