@@ -11,6 +11,7 @@ import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { HomePageComponent } from './Components/home-page/home-page.component';
 import { AddContractComponent } from './Components/add-contract/add-contract.component';
+import { ListecontractComponent } from './Components/listecontract/listecontract.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AddContractComponent } from './Components/add-contract/add-contract.com
     NotFoundComponent,
     ContactComponent,
     HomePageComponent,
-    AddContractComponent
+    AddContractComponent,
+    ListecontractComponent
   ],
   imports: [
     BrowserModule,

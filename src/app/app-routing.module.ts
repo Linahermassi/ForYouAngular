@@ -6,11 +6,12 @@ import { MenuComponent } from './Components/menu/menu.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { AddContractComponent } from './Components/add-contract/add-contract.component';
 import { ContractComponent } from './Components/contract/contract.component';
+import { ListecontractComponent } from './Components/listecontract/listecontract.component';
 
 const routes: Routes = [
   {path:'homepage',component:HomePageComponent},
   {path:'menu',component:MenuComponent,children :[
-  {path:'contract',component:ContractComponent},
+  {path:'listcontract',component:ListecontractComponent},
   {path:'addcontract',component:AddContractComponent},
 ]},
   {path:'contact',component:ContactComponent},
