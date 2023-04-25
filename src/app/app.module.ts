@@ -12,6 +12,14 @@ import { ContactComponent } from './Components/contact/contact.component';
 import { HomePageComponent } from './Components/home-page/home-page.component';
 import { AddContractComponent } from './Components/add-contract/add-contract.component';
 import { ListecontractComponent } from './Components/listecontract/listecontract.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ModifContractComponent } from './Components/modif-contract/modif-contract.component';
+import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input'
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { ContartRenouvComponent } from './Components/contart-renouv/contart-renouv.component'
+import { MatPaginatorModule } from '@angular/material/paginator'
+
 
 @NgModule({
   declarations: [
@@ -24,11 +32,18 @@ import { ListecontractComponent } from './Components/listecontract/listecontract
     ContactComponent,
     HomePageComponent,
     AddContractComponent,
-    ListecontractComponent
+    ListecontractComponent,
+    ModifContractComponent,
+    ContartRenouvComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

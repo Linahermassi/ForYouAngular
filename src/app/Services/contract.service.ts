@@ -9,8 +9,8 @@ export class ContractService {
   readonly Endpoint_Getcontract ="/foryou/Contract/afficherAll"
   readonly Endpoint_Addcontract ="/foryou/Contract/ajouterContract"
   readonly Endpoint_Editcontract ="/foryou/Contract/ModifierContract"
-  readonly Endpoint_Deletecontract ="/foryou/Contract/SupprimerContract"
-
+  readonly Endpoint_Deletecontract ="/foryou/Contract/SupprimerContractById"
+  readonly Endpoint_FindcontractByid ="/foryou/Contract/afficherContractById/"
 
   constructor(private httpClient : HttpClient) { }
   getContracts(){
@@ -19,11 +19,16 @@ export class ContractService {
   AddContracts(contract:ContractModel){
     return this.httpClient.post<string>(this.Api_Url+this.Endpoint_Addcontract,contract)
   }
+  FindContractByid(id:string){
+    let ids:number = +id
+    return this.httpClient.get<ContractModel>(this.Api_Url+this.Endpoint_FindcontractByid+ids)
+  }
   EditContracts(contract:ContractModel){
-    return this.httpClient.put<string>(this.Api_Url+this.Endpoint_Addcontract,contract)
+    return this.httpClient.put(this.Api_Url+this.Endpoint_Editcontract,contract)
   }
-  DeleteContracts(){
-    this.httpClient.delete(this.Api_Url+this.Endpoint_Deletecontract)
+  DeleteContracts(id:number){
+    this.httpClient.delete(this.Api_Url+this.Endpoint_Deletecontract+id)
   }
+
 }
 
