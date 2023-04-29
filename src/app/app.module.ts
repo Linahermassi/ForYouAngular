@@ -18,7 +18,8 @@ import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input'
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { ContartRenouvComponent } from './Components/contart-renouv/contart-renouv.component'
-import { MatPaginatorModule } from '@angular/material/paginator'
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { PaymentComponent } from './Components/payment/payment.component'
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { MatPaginatorModule } from '@angular/material/paginator'
     AddContractComponent,
     ListecontractComponent,
     ModifContractComponent,
-    ContartRenouvComponent
+    ContartRenouvComponent,
+    PaymentComponent
   ],
   imports: [
     HttpClientModule,

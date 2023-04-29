@@ -8,9 +8,11 @@ import { AddContractComponent } from './Components/add-contract/add-contract.com
 import { ContractComponent } from './Components/contract/contract.component';
 import { ListecontractComponent } from './Components/listecontract/listecontract.component';
 import { ModifContractComponent } from './Components/modif-contract/modif-contract.component';
+import { PaymentComponent } from './Components/payment/payment.component';
 
 const routes: Routes = [
   {path:'homepage',component:HomePageComponent},
+  {path:'payment',component:PaymentComponent},
   {path:'menu',component:MenuComponent,children :[
   {path:'listcontract',component:ListecontractComponent},
   {path:'addcontract',component:AddContractComponent},
