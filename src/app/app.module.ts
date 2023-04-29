@@ -11,7 +11,18 @@ import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { HomePageComponent } from './Components/home-page/home-page.component';
 import { ListeventComponent } from './Components/listevent/listevent.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AddEventComponent } from './Components/add-event/add-event.component';
+import { FormsModule } from '@angular/forms';
+import { ModifEventComponent } from './Components/modifevent/modifevent.component';
+import { ListeventfrontComponent } from './Components/listeventfront/listeventfront.component';
+import { EventCardComponent } from './Components/event-card/event-card.component';
+import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
 
+//import {MatInputModule} from '@angular/material/input';
+//import {MatAutocompleteModule} from '@angular/material/autocomplete';
+//import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -24,11 +35,22 @@ import { ListeventComponent } from './Components/listevent/listevent.component';
     ContactComponent,
     HomePageComponent,
     ListeventComponent,
-    
+    AddEventComponent,
+    ModifEventComponent,
+    ListeventfrontComponent,
+    EventCardComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    CommonModule,
+    MatCardModule
+
+  ],
+  exports: [
+    ListeventfrontComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

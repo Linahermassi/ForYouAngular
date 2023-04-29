@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-4" *ngFor="let event of listEvent; let i=index">
+    <mat-card class="event-card">
+      <mat-card-header>
+        <mat-card-title>{{ event.name_Event }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="event-details"><strong>Date:</strong> {{ event.date_Event | date: 'dd/MM/yyyy' }}</p>
+        <p class="event-details"><strong>Place:</strong> {{ event.place }}</p>
+        <div id="{{'map' + i}}"></div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

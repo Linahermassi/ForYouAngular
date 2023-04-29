@@ -1,1 +1,36 @@
-<p>listevent works!</p>
+<body>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Liste des contracts : </h3>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped"style="font-size:small;" >
+          <thead style="background-color: #14B5E9;font-size:small; color: #ffffff;">
+          <tr>
+            <th>Identifiant</th>
+            <th>Date de création</th>
+            <th>Date début</th>
+            <th>Date d'expiration</th>
+            <th>Date d'expiration</th>
+            
+          </tr>
+          </thead>
+          <tbody *ngFor="let e of listEvent">
+          <tr (click)="goTo(e.event_id)">
+            <td>{{e.event_id}}</td>
+            <td>{{e.date_Event}}</td>
+            <td>{{e.name_Event}}</td>
+            <td>{{e.place}}</td>
+            <td>{{e.mark}}</td>
+            
+          </tr>
+          <button (click)="deleteEvent(e.event_id)" type="button" class="btn btn-
+primary">DELETE</button>
+          </tbody>
+        </table>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+    </body>

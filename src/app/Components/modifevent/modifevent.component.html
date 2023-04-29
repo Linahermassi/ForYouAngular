@@ -1,0 +1,55 @@
+<body>
+    
+    <section class="content">
+      <br>
+      <div class="container-fluid">
+        <h4>Ajouter un nouveau contrat :</h4><br>
+        <div class="row justify-content-center">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary"style="background-color:#ffffff;">
+              <div class="card-header" style="background-color: #14B5E9;">
+                <h3 class="card-title"style="color: #ffffff;">Formulaire d'ajout</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Nom de l'evenement </label>
+                        <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="Event.name_Event">
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <label>Place
+                        </label>
+                        <input type="text" class="form-control" id="exampletext1" name="nom" [(ngModel)]="Event.place">
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <label>Date
+                        </label>
+                        <input type="date" class="form-control" id="exampledate3" name="date" [(ngModel)]="Event.date_Event">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+  
+                      
+  
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer d-flex justify-content-center">
+                  <button type="submit" class="btn btn-primary" style="background-color: #14B5E9;border-color: #14B5E9;margin-right: 100px;"routerLink="menu/listevent">Retour</button>
+                  <button type="submit" class="btn btn-primary" style="background-color: #14B5E9;border-color: #14B5E9;"(click)=" EditEvent()">Modifier</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+  </body>
