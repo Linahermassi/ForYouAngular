@@ -5,14 +5,15 @@ import { HomePageComponent } from './Components/home-page/home-page.component';
 import { MenuComponent } from './Components/menu/menu.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { AddContractComponent } from './Components/add-contract/add-contract.component';
-import { ContractComponent } from './Components/contract/contract.component';
 import { ListecontractComponent } from './Components/listecontract/listecontract.component';
 import { ModifContractComponent } from './Components/modif-contract/modif-contract.component';
 import { PaymentComponent } from './Components/payment/payment.component';
+import { ContratClientComponent } from './Components/contrat-client/contrat-client.component';
 
 const routes: Routes = [
   {path:'homepage',component:HomePageComponent},
   {path:'payment',component:PaymentComponent},
+  {path:'contratClient',component:ContratClientComponent},
   {path:'menu',component:MenuComponent,children :[
   {path:'listcontract',component:ListecontractComponent},
   {path:'addcontract',component:AddContractComponent},

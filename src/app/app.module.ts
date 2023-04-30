@@ -19,7 +19,8 @@ import {MatInputModule} from '@angular/material/input'
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { ContartRenouvComponent } from './Components/contart-renouv/contart-renouv.component'
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { PaymentComponent } from './Components/payment/payment.component'
+import { PaymentComponent } from './Components/payment/payment.component';
+import { ContratClientComponent } from './Components/contrat-client/contrat-client.component'
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { PaymentComponent } from './Components/payment/payment.component'
     ListecontractComponent,
     ModifContractComponent,
     ContartRenouvComponent,
-    PaymentComponent
+    PaymentComponent,
+    ContratClientComponent
   ],
   imports: [
     HttpClientModule,
