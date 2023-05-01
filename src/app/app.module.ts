@@ -23,7 +23,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { PaymentComponent } from './Components/payment/payment.component';
 import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './Components/reset-password/reset-password.component'
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,10 @@ import { ResetPasswordComponent } from './Components/reset-password/reset-passwo
     HttpClientModule,
     MatInputModule,
     MatAutocompleteModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    CommonModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]

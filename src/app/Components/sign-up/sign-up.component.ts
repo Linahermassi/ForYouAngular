@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/Services/user.service';
 
 @Component({
@@ -21,7 +22,8 @@ export class SignUpComponent implements OnInit {
   public signUpForm: FormGroup;
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ){}
 
   ngOnInit(): void {
@@ -32,7 +34,7 @@ export class SignUpComponent implements OnInit {
       email:new FormControl(null, Validators.required),
       phoneNumber:new FormControl(null, Validators.required),
       birthdate: new FormControl(null, Validators.required),
-      password:new FormControl(null, Validators.required),
+      password: new FormControl(null, Validators.required),
       confirmPassword:new FormControl(null, Validators.required),
       address: new FormControl(null, Validators.required),
       role: new FormControl(null, Validators.required)
@@ -48,7 +50,6 @@ export class SignUpComponent implements OnInit {
       alert('pwd not equals');
       return;
     }
-
     this.userService.register(
       {
         username: this.username,
@@ -62,7 +63,7 @@ export class SignUpComponent implements OnInit {
         birthDate: this.birthdate
       }
     ).subscribe({
-      next: (response) => console.log(response)
+      next: () => this.router.navigate(['/login'])
     })
   }
   }
