@@ -1,14 +1,25 @@
-<div>
+<app-header></app-header>
+<style>
+    body {
+        margin: 50px 0 0 0;
+        padding: 0;
+    }
+</style>
+<body>
+<div class="container">
+<div class="form-container">
+    <h1 style="font-size: 32px; font-weight: bold; text-align: center; margin-bottom: 24px;">Simuler votre prime d'assurance Agriculture</h1>
+    <div class="form-group">
     <label>Land Value:</label>
     <input [(ngModel)]="landValue" type="number">
   </div>
-  
-  <div>
+
+  <div class="form-group">
     <label>Expected Income:</label>
     <input [(ngModel)]="expectedIncome" type="number">
   </div>
-  
-  <div>
+
+  <div class="form-group">
     <label>Insurance Type:</label>
     <select [(ngModel)]="insuranceType">
       <option value="">Select Insurance Type</option>
@@ -17,12 +28,65 @@
       <option value="crop">Crop Insurance</option>
     </select>
   </div>
-  
-  <div>
+
+  <div class="form-group">
     <button (click)="calculatePremium()">Calculate Premium</button>
   </div>
-  
-  <div *ngIf="premium !== null">
-    <p>The premium is: {{ premium }}</p>
+
+  <div class="result-container" *ngIf="premium !== null">
+    <p class="result">The premium is: {{ premium }}</p>
   </div>
-  
+</div>
+<br>
+
+
+<div class="form-container">
+    <h1 style="font-size: 32px; font-weight: bold; text-align: center; margin-bottom: 24px;">Simuler votre prime d'assurance Voiture</h1>
+
+
+    
+    <div class="form-group">
+        <label>Car Age:</label>
+        <input type="number" [(ngModel)]="ageDriver" name="ageDriver" required>
+      </div>
+      
+      <div class="form-group">
+        <label>Number of kilometers driven :</label>
+        <input type="number" [(ngModel)]="km" name="km" required>
+      </div>
+      
+      <div class="form-group">
+        <label>Car type:</label>
+        <select [(ngModel)]="carType" name="carType" required>
+          <option value="ECONOMY">ECONOMY</option>
+          <option value="MIDRANGE">MIDRANGE</option>
+          <option value="LUXURY">LUXURY</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>New car value:</label>
+        <input type="number" [(ngModel)]="newCarValue" name="newCarValue" required>
+      </div>
+      
+      <div class="form-group">
+        <label>Insurance type:</label>
+        <select [(ngModel)]="insuranceTypecar" name="insuranceType" required>
+          <option value="third-party">Third Party</option>
+          <option value="third-party fire and theft">Third Party Fire and Theft</option>
+          <option value="comprehensive">comprehensive</option>
+          <option value="premium">premium</option>
+        </select>
+      </div>
+          <div class="form-group">
+            <button (click)="calculatepremiumcar()">Calculate Premium</button>
+          </div>
+        
+          <div class="result-container" *ngIf="premiumcar !== null">
+            <p class="result">The premium is: {{ premiumcar }}</p>
+          </div>
+    
+</div>
+</div>
+
+<app-footer></app-footer>

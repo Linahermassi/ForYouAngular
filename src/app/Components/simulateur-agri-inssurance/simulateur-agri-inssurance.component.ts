@@ -18,4 +18,17 @@ export class SimulateurAgriInssuranceComponent {
     this.premiumService.calculatePremium(this.landValue, this.expectedIncome, this.insuranceType)
       .subscribe((premium: any) => this.premium = premium);
 }
+ageDriver!: number;
+  km!: number;
+  carType!: string;
+  newCarValue!: number;
+  insuranceTypecar!: string;
+  premiumcar!: number;
+
+  
+
+  calculatepremiumcar(): void {
+    this.premiumService.calculatePremiumcar(this.ageDriver, this.km, this.carType, this.newCarValue, this.insuranceTypecar)
+      .subscribe((premiumcar: number) => this.premiumcar = premiumcar);
+  }
 }

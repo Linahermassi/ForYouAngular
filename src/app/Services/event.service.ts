@@ -38,4 +38,8 @@ export class EventService {
     //const url = `${this.Api_Url+ this.calculatePremiumUrl}?landValue=${landValue}&expectedIncome=${expectedIncome}&insuranceType=${insuranceType}`;
     return this.httpClient.get<number>(this.Api_Url+this.calculatePremiumUrl+'?landValue='+landValue+'&expectedIncome='+expectedIncome+'&insuranceType='+insuranceType);
 }
+calculatePremiumcar(ageDriver: number, km: number, carType: string, newCarValue: number, insuranceType: string): Observable<number> {
+  const url = `${this.Api_Url}/foryou/Simulator/calculatePremium?ageDriver=${ageDriver}&km=${km}&carType=${carType}&newCarValue=${newCarValue}&insuranceType=${insuranceType}`;
+  return this.httpClient.get<number>(url);
+}
 }
