@@ -13,6 +13,16 @@ import { LoginComponent } from './Components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
+import { AddContractComponent } from './Components/add-contract/add-contract.component';
+import { ListecontractComponent } from './Components/listecontract/listecontract.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ModifContractComponent } from './Components/modif-contract/modif-contract.component';
+import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input'
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { ContartRenouvComponent } from './Components/contart-renouv/contart-renouv.component'
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { PaymentComponent } from './Components/payment/payment.component'
 
 
 @NgModule({
@@ -27,13 +37,22 @@ import { SignUpComponent } from './Components/sign-up/sign-up.component';
     HomePageComponent,
     LoginComponent,
     SignUpComponent,
+    AddContractComponent,
+    ListecontractComponent,
+    ModifContractComponent,
+    ContartRenouvComponent,
+    PaymentComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

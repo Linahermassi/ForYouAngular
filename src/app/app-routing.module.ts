@@ -6,10 +6,20 @@ import { MenuComponent } from './Components/menu/menu.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { LoginComponent } from './Components/login/login.component';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
+import { AddContractComponent } from './Components/add-contract/add-contract.component';
+import { ContractComponent } from './Components/contract/contract.component';
+import { ListecontractComponent } from './Components/listecontract/listecontract.component';
+import { ModifContractComponent } from './Components/modif-contract/modif-contract.component';
+import { PaymentComponent } from './Components/payment/payment.component';
 
 const routes: Routes = [
   {path:'homepage',component:HomePageComponent},
-  {path:'menu',component:MenuComponent},
+  {path:'payment',component:PaymentComponent},
+  {path:'menu',component:MenuComponent,children :[
+  {path:'listcontract',component:ListecontractComponent},
+  {path:'addcontract',component:AddContractComponent},
+  {path:'modifcontract/:id',component:ModifContractComponent},
+]},
   {path:'contact',component:ContactComponent},
   {path: 'login', component: LoginComponent},
   {path: 'sign-up', component: SignUpComponent},
