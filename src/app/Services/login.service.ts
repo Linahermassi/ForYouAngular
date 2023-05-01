@@ -22,6 +22,20 @@ export class LoginService {
     );
   }
 
+  forgotPassword(email: string) {
+    return this.httpClient.post<any>(
+      `${this.baseUri}/foryou/forgot_password/${email}`,
+      {}
+    )
+  }
+
+  resetPassword(token: string, pwd: string) {
+    return this.httpClient.post<any>(
+      `${this.baseUri}/foryou/reset_password/${token}/${pwd}`,
+      {}
+    )
+  }
+
   logout() {
     localStorage.clear();
     this.router.navigate(['/']);

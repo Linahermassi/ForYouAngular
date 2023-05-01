@@ -41,6 +41,9 @@ export class SignUpComponent implements OnInit {
 
   signUp()
   {
+
+   if(this.signUpForm.valid) { 
+
     if(this.password !== this.confirmPassword) {
       alert('pwd not equals');
       return;
@@ -61,5 +64,6 @@ export class SignUpComponent implements OnInit {
     ).subscribe({
       next: (response) => console.log(response)
     })
+  }
   }
 }
