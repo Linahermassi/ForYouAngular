@@ -15,9 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { AddContractComponent } from './Components/add-contract/add-contract.component';
 import { ListecontractComponent } from './Components/listecontract/listecontract.component';
-import { HttpClientModule } from '@angular/common/http';
 import { ModifContractComponent } from './Components/modif-contract/modif-contract.component';
-import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input'
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { ContartRenouvComponent } from './Components/contart-renouv/contart-renouv.component'
