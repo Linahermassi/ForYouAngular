@@ -20,8 +20,12 @@ import {MatInputModule} from '@angular/material/input'
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { ContartRenouvComponent } from './Components/contart-renouv/contart-renouv.component'
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { PaymentComponent } from './Components/payment/payment.component'
-
+import { PaymentComponent } from './Components/payment/payment.component';
+import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './Components/reset-password/reset-password.component'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,9 @@ import { PaymentComponent } from './Components/payment/payment.component'
     ListecontractComponent,
     ModifContractComponent,
     ContartRenouvComponent,
-    PaymentComponent
+    PaymentComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     HttpClientModule,
@@ -50,7 +56,10 @@ import { PaymentComponent } from './Components/payment/payment.component'
     HttpClientModule,
     MatInputModule,
     MatAutocompleteModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    CommonModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]

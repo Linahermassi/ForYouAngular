@@ -15,7 +15,7 @@ export class UserService {
   register(user: User)
   {
     return this.httpClient.post<any>(
-      `${this.baseUri}/foryou/register`,
+      `${this.baseUri}/foryou/register/${user.role}`,
       user
     )
   }

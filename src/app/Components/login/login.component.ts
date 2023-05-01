@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Login } from 'src/app/Models/Login';
 import { LoginService } from 'src/app/Services/login.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private loginService: LoginService,
-    private router: Router
+    private router: Router,
+    private toastrService: ToastrService
   ){}
 
   ngOnInit(): void {
@@ -35,10 +37,13 @@ export class LoginComponent implements OnInit {
       )).subscribe({
         next: (response) => {
             localStorage.setItem('token', response.token)
+            localStorage.setItem('role', response.role);
+            this.toastrService.success('Login', 'Connected successfully');
+            this.router.navigate(['/homepage']);
         },
         complete: () => {
         },
-        error:  (error) => console.log(error)
+        error:  (error) => this.toastrService.error('Login', 'Invalid password')
       })
     }
   }

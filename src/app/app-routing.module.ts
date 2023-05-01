@@ -11,18 +11,30 @@ import { ContractComponent } from './Components/contract/contract.component';
 import { ListecontractComponent } from './Components/listecontract/listecontract.component';
 import { ModifContractComponent } from './Components/modif-contract/modif-contract.component';
 import { PaymentComponent } from './Components/payment/payment.component';
+import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
+import { AuthGuard } from './Guard/auth-guard.guard';
 
 const routes: Routes = [
   {path:'homepage',component:HomePageComponent},
   {path:'payment',component:PaymentComponent},
-  {path:'menu',component:MenuComponent,children :[
-  {path:'listcontract',component:ListecontractComponent},
-  {path:'addcontract',component:AddContractComponent},
-  {path:'modifcontract/:id',component:ModifContractComponent},
-]},
+  {path:'menu', component:MenuComponent,
+  canActivate: [AuthGuard],
+  canActivateChild: [AuthGuard],
+  data: {
+    allowedRole: ['ADMIN','INSURER']
+  },
+  children :[
+    {path:'listcontract',component:ListecontractComponent},
+    {path:'addcontract',component:AddContractComponent},
+    {path:'modifcontract/:id',component:ModifContractComponent},
+  ]
+},
   {path:'contact',component:ContactComponent},
   {path: 'login', component: LoginComponent},
   {path: 'sign-up', component: SignUpComponent},
+  {path: 'forgot-password', component: ForgotPasswordComponent},
+  {path: 'reset_password', component: ResetPasswordComponent},
   {path:'',redirectTo:'homepage',pathMatch:'full'},
   {path:'**',component:NotFoundComponent}
 
