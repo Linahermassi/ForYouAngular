@@ -19,6 +19,7 @@ import { ListeventfrontComponent } from './Components/listeventfront/listeventfr
 import { EventCardComponent } from './Components/event-card/event-card.component';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
+import { SimulateurAgriInssuranceComponent } from './Components/simulateur-agri-inssurance/simulateur-agri-inssurance.component';
 
 //import {MatInputModule} from '@angular/material/input';
 //import {MatAutocompleteModule} from '@angular/material/autocomplete';
@@ -39,6 +40,7 @@ import { MatCardModule } from '@angular/material/card';
     ModifEventComponent,
     ListeventfrontComponent,
     EventCardComponent,
+    SimulateurAgriInssuranceComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { ListeventComponent } from './Components/listevent/listevent.component';
 import { AddEventComponent } from './Components/add-event/add-event.component';
 import { ModifEventComponent } from './Components/modifevent/modifevent.component';
 import { ListeventfrontComponent } from './Components/listeventfront/listeventfront.component';
+import { SimulateurAgriInssuranceComponent } from './Components/simulateur-agri-inssurance/simulateur-agri-inssurance.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
 },
   {path:'contact',component:ContactComponent},
   {path:'listeventfront',component:ListeventfrontComponent},
+  {path:'simulateurafri',component:SimulateurAgriInssuranceComponent},
   {path:'',redirectTo:'homepage',pathMatch:'full'},
   {path:'**',component:NotFoundComponent}
 

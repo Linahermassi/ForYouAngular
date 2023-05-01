@@ -1,0 +1,28 @@
+<div>
+    <label>Land Value:</label>
+    <input [(ngModel)]="landValue" type="number">
+  </div>
+  
+  <div>
+    <label>Expected Income:</label>
+    <input [(ngModel)]="expectedIncome" type="number">
+  </div>
+  
+  <div>
+    <label>Insurance Type:</label>
+    <select [(ngModel)]="insuranceType">
+      <option value="">Select Insurance Type</option>
+      <option value="land">Land Insurance</option>
+      <option value="livestock">Livestock Insurance</option>
+      <option value="crop">Crop Insurance</option>
+    </select>
+  </div>
+  
+  <div>
+    <button (click)="calculatePremium()">Calculate Premium</button>
+  </div>
+  
+  <div *ngIf="premium !== null">
+    <p>The premium is: {{ premium }}</p>
+  </div>
+  
