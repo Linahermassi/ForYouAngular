@@ -5,16 +5,28 @@
 </div>
 <div class="row">
   <div class="col-md-4" *ngFor="let event of listEvent; let i=index">
-    <mat-card class="event-card">
-      <mat-card-header>
-        <mat-card-title>{{ event.name_Event }}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p class="event-details"><strong>Date:</strong> {{ event.date_Event | date: 'dd/MM/yyyy' }}</p>
-        <p class="event-details"><strong>Place:</strong> {{ event.place }}</p>
-        <div id="{{'map' + i}}"></div>
-      </mat-card-content>
-    </mat-card>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">{{event.name_Event}}</h3>
+        <div class="card-subtitle">{{event.date_Event | date:'dd/MM/yyyy'}}</div>
+      </div>
+      <div class="card-body">
+        <div class="card-text">{{event.place}}</div>
+        
+      </div>
+      <div class="card-footer">
+        <div class="rating">
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9734;</span>
+          <span class="rating-count">(4)</span>
+        </div>
+      <mat-card-actions>
+        <button class="register-btn" (click)="register(event)">Register</button>
+      </mat-card-actions>
+    
   </div>
 </div>
-<app-footer></app-footer>
+<ngx-qrcode [qrc-value]="event"></ngx-qrcode>

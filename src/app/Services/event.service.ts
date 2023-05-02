@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import {EventModel } from '../Models/EventModel';
 
 import { Observable } from 'rxjs';
+import { InscriptionEvent } from '../Models/InscriptionEvent';
 @Injectable({
   providedIn: 'root'
 })
 export class EventService {
   readonly Api_Url ="http://localhost:8081"
   readonly Endpoint_Getevent ="/foryou/Event/afficherAllEvents"
-  readonly Endpoint_Addevent ="/foryou/Event/ajouterEvent"
+  readonly Endpoint_Addevent ="/foryou/Event/ajouterEventavecuser"
   readonly Endpoint_Editevent ="/foryou/Event/ModifierEvent"
   readonly Endpoint_Deleteevent ="/foryou/Event/SupprimerEventById"
   readonly Endpoint_FindcontractByid ="/foryou/Event/afficherEventById/"
@@ -41,5 +42,9 @@ export class EventService {
 calculatePremiumcar(ageDriver: number, km: number, carType: string, newCarValue: number, insuranceType: string): Observable<number> {
   const url = `${this.Api_Url}/foryou/Simulator/calculatePremium?ageDriver=${ageDriver}&km=${km}&carType=${carType}&newCarValue=${newCarValue}&insuranceType=${insuranceType}`;
   return this.httpClient.get<number>(url);
+}
+registerForEvent(inscription:InscriptionEvent,event: EventModel) {
+  const url = `${this.Api_Url}/foryou/InscriptionEvent/ajouterParticpantInscriptionEvent/${event.event_id}`;
+  return this.httpClient.post<InscriptionEvent>(url,inscription);
 }
 }
