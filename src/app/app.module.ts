@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './Components/menu/menu.component';
@@ -17,11 +18,9 @@ import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input'
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { ContartRenouvComponent } from './Components/contart-renouv/contart-renouv.component'
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { PaymentComponent } from './Components/payment/payment.component';
 import { ContratClientComponent } from './Components/contrat-client/contrat-client.component'
-import {MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
-import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -47,9 +46,7 @@ import { MatTableModule } from '@angular/material/table';
     FormsModule,
     MatInputModule,
     MatAutocompleteModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatTableModule
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
