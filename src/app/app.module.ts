@@ -19,7 +19,6 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { ContartRenouvComponent } from './Components/contart-renouv/contart-renouv.component'
 import { PaymentComponent } from './Components/payment/payment.component';
 import { ContratClientComponent } from './Components/contrat-client/contrat-client.component'
-import { DataTablesModule } from 'angular-datatables';
 import {MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
@@ -47,7 +46,6 @@ import { MatTableModule } from '@angular/material/table';
     AppRoutingModule,
     FormsModule,
     MatInputModule,
-    DataTablesModule,
     MatAutocompleteModule,
     MatPaginatorModule,
     MatSortModule,
