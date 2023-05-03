@@ -22,6 +22,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { PaymentComponent } from './Components/payment/payment.component';
 import { ContratClientComponent } from './Components/contrat-client/contrat-client.component'
 
+
 @NgModule({
   declarations: [
     AppComponent,
