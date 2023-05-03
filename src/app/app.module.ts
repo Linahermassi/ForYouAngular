@@ -21,6 +21,7 @@ import { ContartRenouvComponent } from './Components/contart-renouv/contart-reno
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { PaymentComponent } from './Components/payment/payment.component';
 import { ContratClientComponent } from './Components/contrat-client/contrat-client.component'
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { ContratClientComponent } from './Components/contrat-client/contrat-clie
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    DataTablesModule,
     MatInputModule,
     MatAutocompleteModule,
     MatPaginatorModule
