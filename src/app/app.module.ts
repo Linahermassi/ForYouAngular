@@ -15,10 +15,8 @@ import { ListecontractComponent } from './Components/listecontract/listecontract
 import { HttpClientModule } from '@angular/common/http';
 import { ModifContractComponent } from './Components/modif-contract/modif-contract.component';
 import { FormsModule } from '@angular/forms';
-import {MatInputModule} from '@angular/material/input'
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+
 import { ContartRenouvComponent } from './Components/contart-renouv/contart-renouv.component'
-import { MatPaginatorModule } from '@angular/material/paginator';
 import { PaymentComponent } from './Components/payment/payment.component';
 import { ContratClientComponent } from './Components/contrat-client/contrat-client.component'
 
@@ -45,9 +43,7 @@ import { ContratClientComponent } from './Components/contrat-client/contrat-clie
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    MatInputModule,
-    MatAutocompleteModule,
-    MatPaginatorModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
