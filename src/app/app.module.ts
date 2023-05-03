@@ -20,8 +20,11 @@ import { EventCardComponent } from './Components/event-card/event-card.component
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { SimulateurAgriInssuranceComponent } from './Components/simulateur-agri-inssurance/simulateur-agri-inssurance.component';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { QRCodeModule } from 'ngx-qrcode2';
+import {QRCodeModule} from 'angularx-qrcode';
+import { SetfeedbackComponent } from './Components/setfeedback/setfeedback.component'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+//import { QRCodeModule } from 'ngx-qrcode2';
 //import {MatInputModule} from '@angular/material/input';
 //import {MatAutocompleteModule} from '@angular/material/autocomplete';
 //import { MatPaginatorModule } from '@angular/material/paginator';
@@ -42,6 +45,7 @@ import { QRCodeModule } from 'ngx-qrcode2';
     ListeventfrontComponent,
     EventCardComponent,
     SimulateurAgriInssuranceComponent,
+    SetfeedbackComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,8 +54,8 @@ import { QRCodeModule } from 'ngx-qrcode2';
     FormsModule,
     CommonModule,
     MatCardModule,
-    MatSnackBarModule,
     QRCodeModule,
+    FontAwesomeModule,
 
   ],
   exports: [

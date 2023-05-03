@@ -9,10 +9,11 @@ import { AddEventComponent } from './Components/add-event/add-event.component';
 import { ModifEventComponent } from './Components/modifevent/modifevent.component';
 import { ListeventfrontComponent } from './Components/listeventfront/listeventfront.component';
 import { SimulateurAgriInssuranceComponent } from './Components/simulateur-agri-inssurance/simulateur-agri-inssurance.component';
+import { SetfeedbackComponent } from './Components/setfeedback/setfeedback.component';
 
 
 const routes: Routes = [
-  {path:'homepage',component:HomePageComponent,children:[{path:'listeventfront',component:ListeventfrontComponent},]
+  {path:'homepage',component:HomePageComponent,
 },
   {path:'menu',component:MenuComponent,children:[{path:'listevent',component:ListeventComponent}
   ,{path:'addevent',component:AddEventComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:'contact',component:ContactComponent},
   {path:'listeventfront',component:ListeventfrontComponent},
   {path:'simulateurafri',component:SimulateurAgriInssuranceComponent},
+  {path:'setfeedback/:id',component:SetfeedbackComponent},
   {path:'',redirectTo:'homepage',pathMatch:'full'},
   {path:'**',component:NotFoundComponent}
 

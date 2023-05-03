@@ -8,6 +8,7 @@ import { InscriptionEvent } from '../Models/InscriptionEvent';
   providedIn: 'root'
 })
 export class EventService {
+  
   readonly Api_Url ="http://localhost:8081"
   readonly Endpoint_Getevent ="/foryou/Event/afficherAllEvents"
   readonly Endpoint_Addevent ="/foryou/Event/ajouterEventavecuser"
@@ -15,6 +16,7 @@ export class EventService {
   readonly Endpoint_Deleteevent ="/foryou/Event/SupprimerEventById"
   readonly Endpoint_FindcontractByid ="/foryou/Event/afficherEventById/"
  readonly calculatePremiumUrl = "/foryou/Simulator/calculate-premium";
+ readonly setfeedbackUrl="/foryou/InscriptionEvent/SetFeedback";
 
 
   constructor(private httpClient : HttpClient) { }
@@ -46,5 +48,11 @@ calculatePremiumcar(ageDriver: number, km: number, carType: string, newCarValue:
 registerForEvent(inscription:InscriptionEvent,event: EventModel) {
   const url = `${this.Api_Url}/foryou/InscriptionEvent/ajouterParticpantInscriptionEvent/${event.event_id}`;
   return this.httpClient.post<InscriptionEvent>(url,inscription);
+}
+setfeedback(inscripid:number,mark:number) {
+  let ids:number = +inscripid;
+  console.log(this.Api_Url+this.setfeedbackUrl+`/${inscripid}/${mark}`);
+  return this.httpClient.post(this.Api_Url+this.setfeedbackUrl+'/'+ids+'/'+mark,{});
+  //console.log(error);
 }
 }
