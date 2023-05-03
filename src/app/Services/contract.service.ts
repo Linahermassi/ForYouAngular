@@ -9,7 +9,7 @@ export class ContractService {
   readonly Endpoint_Getcontract ="/foryou/Contract/afficherAll"
   readonly Endpoint_Addcontract ="/foryou/Contract/ajouterContract"
   readonly Endpoint_Editcontract ="/foryou/Contract/ModifierContract"
-  readonly Endpoint_Deletecontract ="/foryou/Contract/SupprimerContractById"
+  readonly Endpoint_Deletecontract ="/foryou/Contract/SupprimerContractById/"
   readonly Endpoint_FindcontractByid ="/foryou/Contract/afficherContractById/"
 
   constructor(private httpClient : HttpClient) { }

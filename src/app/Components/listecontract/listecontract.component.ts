@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 import { ContractModel } from 'src/app/Models/ContractModel';
 import { ContractService } from 'src/app/Services/contract.service';
 
@@ -11,10 +11,6 @@ import { ContractService } from 'src/app/Services/contract.service';
 export class ListecontractComponent implements OnInit {
   contracts: ContractModel[] = [];
   filteredContracts: ContractModel[] = [];
-  currentPage = 1;
-  itemsPerPage = 10;
-  totalItems = 0;
-  searchText = '';
 
   listContract!: ContractModel[];
   constructor( private _service:ContractService, private route :Router){}
@@ -29,5 +25,18 @@ export class ListecontractComponent implements OnInit {
   goTo(id:any){
     this.route.navigateByUrl("menu/modifcontract/"+id)
   }
+  /*deleteCredit(id:number) {
+    this._service.DeleteContracts(id).subscribe(()=>this.route.navigateByUrl('/listcredit'));
+
+
+  }
+  deleteContract(id:number)
+  {
+    this._service.DeleteContracts(id).subscribe(
+      ()=>this.contracts=this.contracts.filter((c)=>c.contract_id != id))
+      this._service.getContracts().subscribe(data=>{
+        this.contracts=data;}
+      )
+  }*/
 
 }

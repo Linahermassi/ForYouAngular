@@ -18,6 +18,7 @@ export class AddContractComponent implements OnInit {
   }
   AddContracts(){
     return this.c.AddContracts(this.contract).subscribe(()=>this._router.navigateByUrl("/menu/listcontract"));
+    console.log("test")
   }
 
   formalityOptions=["BankCard","BankCheck","BankTransfer"]
