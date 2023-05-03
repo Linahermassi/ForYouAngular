@@ -1,0 +1,45 @@
+<body>
+
+    <app-header></app-header>
+  
+    <div class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header bg-white text-primary text-center" style="font-size: 36px;">
+                 Crédit
+              </div>
+
+            <div class="card-body">
+              <div class="text-center">
+                <!-- <div *ngIf="Credit.status === Statecredit.ACCEPTED"class="table table-striped">!-->
+                <h4>Votre crédit a été accepté!</h4>
+              </div>
+              <div class="text-center my-4">
+                <button class="btn btn-primary" style="font-size: 18px;" (click)="exportPDF(Credit.creditId)">Générer votre PDF</button>
+              </div>
+            </div>
+            <!-- </div>!-->
+
+             <!---
+               <div class="card-body">
+                <div class="text-center">
+                  <div *ngIf="Credit.status === Statecredit.REFUSED"class="table table-striped">
+                       <h4>Votre crédit a été refusé!</h4>
+                   </div>
+                
+                </div>
+              </div>!-->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <app-footer></app-footer>
+  
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+  
+  </body>
+  

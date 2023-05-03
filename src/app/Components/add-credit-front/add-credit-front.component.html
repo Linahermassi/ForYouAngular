@@ -1,0 +1,68 @@
+<body>
+
+    <app-header></app-header>
+    
+      
+      
+        <!-- Votre formulaire HTML pour ajouter un crédit -->
+      
+        <!-- Contact Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h6  style="color: #14b5e9;" >Crédit</h6>
+                    <h1 class="display-6 mb-4" >Ajoutez votre demande de crédit</h1>
+                </div>
+                <div class="row g-0 justify-content-center">
+                    <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.5s">
+                            <form>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="date" class="form-control" id="exampledate1" placeholder="Entre la date de début" name="startDate" [(ngModel)]="credit.startDate">
+                                        <label for="name">Date de debut </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="date" class="form-control" id="exampledate2" placeholder="Entre la date de fin" name="endtDate" [(ngModel)]="credit.endtDate">
+                                        <label for="subject">Date de fin</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="examplenumber1" placeholder="Entre le montant" name="amount" [(ngModel)]="credit.amount">
+                                        <label for="message">Montant</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="exampletext" placeholder="Entre le type de crédit" name="typeCredit" [(ngModel)]="credit.type">
+                                        <label for="message">Type de credit</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="exampletext2" placeholder="Entre le nombre d'annees" name="nombre_années" [(ngModel)]="credit.nb_years">
+                                        <label for="message">Nombre d'années</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-primary rounded-pill py-3 px-5" [routerLink]="['/listcreditfront/',58]" (click)="AddCredits()">Envoyer</button>
+                                   
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Contact End -->
+    <app-footer></app-footer>
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </body>

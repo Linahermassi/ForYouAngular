@@ -1,4 +1,5 @@
 <body>
+ 
     <div class="card">
       <div class="card-header">
         <h3 class="card-title">Liste des credits : </h3>
@@ -6,7 +7,7 @@
       <!-- /.card-header -->
       <div class="card-body">
         <table id="example1" class="table table-bordered table-striped"style="font-size:small;" >
-          <thead style="background-color: #14B5E9;font-size:small; color: #ffffff;">
+          <thead style="background-color: #1E1261;font-size:small; color: #ffffff;">
           <tr>
             <th>Identifiant</th>
             <th>Date de début</th>
@@ -21,7 +22,7 @@
           </tr>
           </thead>
           <tbody *ngFor="let c of listCredit">
-          <tr (click)="goTo(c.creditId)">
+          <tr>
             <td>{{c.creditId}}</td>
             <td>{{c.startDate}}</td>
             <td>{{c.endtDate}}</td>
@@ -32,12 +33,32 @@
             <td>{{c.interestRate}}</td>
             <td>{{c.status}}</td>
             <td>{{c.type}}</td>
-           
+            <td><button style="background-color: #a7cdea;font-size:small; color: hwb(191 0% 95%);" (click)="goTo(c.creditId)" type="button" class="btn btn-primary">Modifier</button></td>
+            <td><button style="background-color: #a7cdea;font-size:small; color: #0c0101;" (click)="deleteCredit(c.creditId)" type="button" class="btn btn-primary">Supprimer</button></td>
+             
+                                                              
           </tr>
           </tbody>
+
         </table>
+
+
+        
+        
       </div>
       <!-- /.card-body -->
     </div>
+</body>
+
     <!-- /.card -->
-    </body>
+    
+
+
+
+
+
+
+
+
+
+    

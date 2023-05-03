@@ -1,0 +1,29 @@
+<table id="example1" class="table table-bordered table-striped"style="font-size:small;" >
+    <thead style="background-color: #14B5E9;font-size:small; color: #ffffff;">
+    <tr>
+      <th>Montant</th>
+      <th>Interet</th>
+      <th>Amortissement</th>
+      <th>Mensualite</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let l of list">
+    <tr>
+      <td> <span >{{l[0]}} </span>
+        <br>
+    </td> 
+    <td> <span >{{l[1]}} </span>
+        <br>
+    </td>
+    <td> <span >{{l[2]}} </span>
+        <br>
+    </td>
+    <td> <span >{{l[3]}} </span>
+        <br>
+    </td>
+       
+                                                           
+    </tr>
+    </tbody>
+
+  </table>

@@ -1,0 +1,43 @@
+<body>
+  <app-header></app-header>
+
+  <div class="container">
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header bg-white text-primary text-center" style="font-size: 36px;">
+            Le 1er pack
+          </div>
+          <div class="card-body">
+            <table class="table table-bordered table-striped" style="font-size:small;">
+              <thead style="background-color: #a7cdea;color: #1E1261;">
+                <tr>
+                  <th>Montant</th>
+                  <th>Intérêt</th>
+                  <th>Amortissement</th>
+                  <th>Mensualité</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let l of list">
+                <tr>
+                  <td>{{ l[0] }}</td>
+                  <td>{{ l[1] }}</td>
+                  <td>{{ l[2] }}</td>
+                  <td>{{ l[3] }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="text-center mt-4">
+              <button type="submit" class="btn btn-primary rounded-pill py-3 px-5" [routerLink]="['/Status/', id]" (confirmer)="Status(id)">Confirmer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+</body>

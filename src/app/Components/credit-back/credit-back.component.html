@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <section class="content">
+        <div class="container">
+            <h1 class="text-center mb-5" style="color: #1E1261">les Ratios</h1>
+            <div class="card mb-5">
+                <div class="card-header">
+                    <h3 class="card-title" style="color: #1E1261">La Rentabilité</h3>
+                </div>
+                <div class="card-body">
+                    <p class="lead mb-0">{{n}}</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title" style="color: #1E1261">Le Profit selon le type de crédit et la région</h2>
+                </div>
+                <div class="card-body">
+                    <form (submit)="GetProfit()">
+                        <div class="form-group">
+                            <label  for="type" style="color: #1E1261">Type :</label>
+                            <input type="text" class="form-control" name="TypeId" [(ngModel)]="type">
+                        </div>
+                        <div class="form-group">
+                            <label   for="region" style="color: #1E1261">Région :</label>
+                            <input type="text" class="form-control" name="RegionId" [(ngModel)]="region">
+                        </div>
+                        <button class="btn btn-primary" type="submit">Calculer</button>
+                    </form>
+                    <p class="mt-3" *ngIf="p !== null">Le profit est : {{p| number:'1.2-2'}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

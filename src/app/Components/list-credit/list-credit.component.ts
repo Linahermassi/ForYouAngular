@@ -10,6 +10,7 @@ import { CreditService } from 'src/app/Services/credit.service';
 })
 export class ListCreditComponent implements OnInit {
   listCredit!: CreditModel[];
+  list!:number[][];
   constructor( private _service:CreditService, private route :Router){}
   ngOnInit(): void {
     this.GetCredits()
@@ -20,7 +21,12 @@ export class ListCreditComponent implements OnInit {
     this.listCredit=res});
   }
   goTo(id:any){
-    this.route.navigateByUrl("menu/modifcontract/"+id)
+    this.route.navigateByUrl("menu/modifiercredit/"+id)
   }
+  deleteCredit(id:number) {
+    this._service.DeleteCredit(id).subscribe(()=>this.route.navigateByUrl('/listcredit'));
+    
+  }
+  
 
 }
