@@ -11,6 +11,14 @@ import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { HomePageComponent } from './Components/home-page/home-page.component';
 import { ReclamationComponent } from './Components/reclamation/reclamation.component';
+import { AddReclamationComponent } from './Components/add-reclamation/add-reclamation.component';
+import { ListeReclamationComponent } from './Components/listereclamation/listereclamation.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 @NgModule({
   declarations: [
@@ -22,11 +30,19 @@ import { ReclamationComponent } from './Components/reclamation/reclamation.compo
     NotFoundComponent,
     ContactComponent,
     HomePageComponent,
-    ReclamationComponent
+    ReclamationComponent,
+    AddReclamationComponent,
+    ListeReclamationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    NgxCaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

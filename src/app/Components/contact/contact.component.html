@@ -13,32 +13,43 @@
                 <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.5s">
                         <form>
                         <div class="row g-3">
-                            <div class="col-md-6">
+                            <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Nom et prénom">
-                                    <label for="name">Nom et prénom </label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Adresse mail">
-                                    <label for="email">Adresse mail</label>
+                                    <input type="text" name="ssss" [(ngModel)]="reclamation.title" class="form-control" id="exampledate1" placeholder="Entrer le titre">
+                                    <label for="name">Titre </label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Objet">
-                                    <label for="subject">Objet</label>
+                                    <input type="text" name="ssss" [(ngModel)]="reclamation.category" class="form-control" id="exampledate2" placeholder="Entrer la catégorie">
+                                    <label for="subject">Catégorie</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 200px"></textarea>
-                                    <label for="message">Message</label>
+                                    <textarea class="form-control" type="text" name="ssss" [(ngModel)]="reclamation.details" class="form-control" id="exampledate3" placeholder="Entrer les détails de votre réclamation" style="height: 200px"></textarea>
+                                    <label for="message">Détails</label>
                                 </div>
                             </div>
+                            <div *ngIf="reclamationStatus === 'success'" class="alert alert-success" role="alert">
+                                Réclamation envoyée avec succès!
+                              </div>
+                              <div *ngIf="reclamationStatus === 'error'" class="alert alert-danger" role="alert">
+                                Erreur! Veuillez réessayer d'envoyer la réclamation.
+                              </div>
+                            <div> <form [formGroup]="aFormGroup">
+                                <ngx-recaptcha2 #captchaElem
+                                  [siteKey]="siteKey"
+                                  (reset)="handleReset()"
+                                  (expire)="handleExpire()"
+                                  (load)="handleLoad()"
+                                  (success)="handleSuccess($event)"
+                                  [useGlobalDomain]="false"
+                                  formControlName="recaptcha">
+                                </ngx-recaptcha2>
+                              </form></div>
                             <div class="col-12 text-center">
-                                <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Envoyer</button>
+                                <button class="btn btn-primary rounded-pill py-3 px-5" type="submit"(click)="AddReclamations()">Envoyer</button>
                             </div>
                         </div>
                     </form>
