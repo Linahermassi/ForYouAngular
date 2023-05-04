@@ -11,6 +11,7 @@ import { ContractService } from 'src/app/Services/contract.service';
 export class ListecontractComponent implements OnInit {
   contracts: ContractModel[] = [];
   filteredContracts: ContractModel[] = [];
+  p: number = 1;
 
   listContract!: ContractModel[];
   constructor( private _service:ContractService, private route :Router){}

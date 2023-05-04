@@ -28,7 +28,7 @@ export class PaymentComponent {
     });
   }
   chargeCard(token: string) {
-    const headers = new HttpHeaders({'token': token, 'amount': ''+100});
+    const headers = new HttpHeaders({'token': token, 'amount': ''+120});
   this.http.post('http://localhost:8081/foryou/payment/charge',  {}, {headers: headers})
     .subscribe(resp => {
       console.log(resp);

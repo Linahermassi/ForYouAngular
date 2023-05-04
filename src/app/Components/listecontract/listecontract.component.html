@@ -24,7 +24,7 @@
         <th>Suppression</th>
       </tr>
       </thead>
-      <tbody *ngFor="let c of listContract">
+      <tbody *ngFor="let c of listContract| paginate: { itemsPerPage: 3, currentPage: p }">
       <tr (click)="goTo(c.contract_id)">
         <td>{{c.contract_id}}</td>
         <td>{{c.creationDate}}</td>
@@ -49,6 +49,8 @@
       </tr>
       </tbody>
     </table>
+    <br><br>
+    <div class="pagination justify-content-center"><pagination-controls (pageChange)="p = $event"></pagination-controls></div>
   </div>
   <!-- /.card-body -->
 </div>

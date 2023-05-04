@@ -1,71 +1,66 @@
-<body>
-  <!-- Main content -->
-  <section class="content">
-    <br>
-    <div class="container-fluid">
-      <h4>Ajouter un nouveau contrat :</h4><br>
-      <div class="row justify-content-center">
-        <!-- left column -->
-        <div class="col-md-12">
-          <!-- general form elements -->
-          <div class="card card-primary"style="background-color:#ffffff;">
-            <div class="card-header" style="background-color: #14B5E9;">
-              <h3 class="card-title"style="color: #ffffff;">Formulaire d'ajout</h3>
-            </div>
-            <!-- /.card-header -->
-            <!-- form start -->
-            <form>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Date de création </label>
-                      <input type="date" class="form-control" id="exampledate1" name="date" [(ngModel)]="contract.creationDate">
-                    </div>
-                    <br>
-                    <div class="form-group">
-                      <label>Date de début
-                      </label>
-                      <input type="date" class="form-control" id="exampledate2" name="date" [(ngModel)]="contract.startDate">
-                    </div>
-                    <br>
-                    <div class="form-group">
-                      <label>Date d'expiration
-                      </label>
-                      <input type="date" class="form-control" id="exampledate3" name="date" [(ngModel)]="contract.exprirationDate">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Prix du contrat
-                      </label>
-                      <input type="number" class="form-control" id="examplenumber1" name="prix" [(ngModel)]="contract.ceilingAmount">
-                    </div>
-                    <br>
-                    <div class="form-group">
-                      <label>Formalité de paiement
-                      </label>
-                      <input type="text" class="form-control" id="exampletext1" name="payment" [(ngModel)]="contract.paymentFormality">
-                    </div>
-                    <br>
-                    <div class="form-group">
-                      <label>Date de paiement
-                      </label>
-                      <input type="date" class="form-control" id="exampledate4" name="date" [(ngModel)]="contract.paymentDate">
-                    </div>
 
+<!DOCTYPE html>
+<html>
+  <body>
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header">
+                <h1 class="text-center mb-5" style="color: #1E1261">Modification du contrat</h1>
+              </div>
+              <div class="card-body row-g-12 ">
+                <form>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-floating">
+                        <input type="Date" class="form-control" id="creationDate" name="creationDate" placeholder="Date de création">
+                        <label for="creationDate">Date de création</label>
+                      </div>
+                      <br>
+                      <div class="form-floating">
+                        <input type="Date" class="form-control" id="StartDate" name="StartDate" placeholder="Date de début">
+                        <label for="StartDate">Date de début</label>
+                      </div>
+                      <br>
+                      <div class="form-floating">
+                        <input type="Date" class="form-control" id="ExpirationDate" name="ExpirationDate" placeholder="Date d'expiration">
+                        <label for="ExpirationDate">Date d'expiration</label>
+                      </div>
+                      <br>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-floating">
+                        <input type="number" class="form-control" id="Prix" name="Prix" placeholder="Prix de contrat">
+                        <label for="Prix">Prix de contrat</label>
+                      </div>
+                      <br>
+                      <div class="form-floating">
+                        <input type="text" class="form-control" id="Formality" name="Formality" placeholder="Formalité de paiement">
+                        <label for="Formality">Formalité de paiement</label>
+                      </div>
+                      <br>
+                      <div class="form-floating">
+                        <input type="Date" class="form-control" id="paymentDate" name="paymentDate" placeholder="Date de paiement">
+                        <label for="paymentDate">Date de paiement</label>
+                      </div>
+                      <br>
+                    </div>
                   </div>
-                </div>
+                  <div class="card-footer">
+                    <div class="card-footer d-flex justify-content-center">
+                      <button type="submit" class="btn btn-sm btn-light rounded-pill py-2 px-4 d-none d-lg-block" style="background-color: #1E1261;border-color: #1E1261;color:white;margin-right: 100px;"routerLink="menu/listcontract">Retour</button>
+                <button type="submit"class="btn btn-sm btn-light rounded-pill py-2 px-4 d-none d-lg-block" style="background-color: #1E1261;border-color: #1E1261;color:white;"(click)="EditContracts()">Modifier</button>
+                <button type="submit" class="btn btn-sm btn-light rounded-pill py-2 px-4 d-none d-lg-block" style="background-color: #1E1261;border-color: #1E1261;color:white;margin-left: 100px;">Imprimer</button>
+                    </div>
+                  </div>
+                </form>
               </div>
-              <div class="card-footer d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary" style="background-color: #14B5E9;border-color: #14B5E9;margin-right: 100px;"routerLink="menu/listcontract">Retour</button>
-                <button type="submit" class="btn btn-primary" style="background-color: #14B5E9;border-color: #14B5E9;"(click)="EditContracts()">Modifier</button>
-                <button type="submit" class="btn btn-primary" style="background-color: #14B5E9;border-color: #14B5E9;margin-left: 100px;">Imprimer</button>
-              </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
-    </div><!-- /.container-fluid -->
-  </section>
-</body>
+    </section>
+  </body>
+</html>
