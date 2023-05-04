@@ -27,8 +27,10 @@ export class ContractService {
     return this.httpClient.put(this.Api_Url+this.Endpoint_Editcontract,contract)
   }
   DeleteContracts(id:number){
-    this.httpClient.delete(this.Api_Url+this.Endpoint_Deletecontract+id)
+    let ids:number = +id
+    return this.httpClient.delete(this.Api_Url+this.Endpoint_Deletecontract+ids)
   }
+
 
 }
 

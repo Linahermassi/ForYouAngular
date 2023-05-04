@@ -25,11 +25,6 @@ export class ListecontractComponent implements OnInit {
   goTo(id:any){
     this.route.navigateByUrl("menu/modifcontract/"+id)
   }
-  /*deleteCredit(id:number) {
-    this._service.DeleteContracts(id).subscribe(()=>this.route.navigateByUrl('/listcredit'));
-
-
-  }
   deleteContract(id:number)
   {
     this._service.DeleteContracts(id).subscribe(
@@ -37,6 +32,10 @@ export class ListecontractComponent implements OnInit {
       this._service.getContracts().subscribe(data=>{
         this.contracts=data;}
       )
+  }
+ /* deleteContract(id:number) {
+    this._service.DeleteContracts(id).subscribe(()=>this.route.navigateByUrl('/listcredit'));
+
   }*/
 
 }

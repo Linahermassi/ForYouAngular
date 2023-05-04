@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class PaymentComponent {
   [key: string]: any;
+  card: any = {};
   constructor(private http: HttpClient) {}
   chargeCreditCard() {
     let form = document.getElementsByTagName("form")[0];
