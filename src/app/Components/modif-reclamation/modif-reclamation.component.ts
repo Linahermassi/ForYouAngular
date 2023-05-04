@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ReclamationModel } from 'src/app/Models/ReclamationModel';
 import { ReclamationService } from 'src/app/Services/reclamation.service';
 
@@ -9,10 +9,20 @@ import { ReclamationService } from 'src/app/Services/reclamation.service';
   styleUrls: ['./modif-reclamation.component.css']
 })
 export class ModifReclamationComponent implements OnInit{
+  reclamationid !: any;
   reclamation : ReclamationModel =new ReclamationModel();
-  constructor(private r: ReclamationService, private _router:Router){
+  constructor(private r: ReclamationService, private _router:Router,private route: ActivatedRoute){
+    if (this.route.snapshot.paramMap.get('id'))
+    this.reclamationid=this.route.snapshot.paramMap.get('id')
   }
   ngOnInit(): void {
+    this.FindReclamationByid()
+  }
+  FindReclamationByid(){
+    return this.r.FindReclamationByid(this.reclamationid).subscribe((data:ReclamationModel)=>{
+      this.reclamation=data
+      console.log(this.reclamation)
+    });
   }
   EditReclamations(){
     return this.r.EditReclamations(this.reclamation).subscribe(()=>this._router.navigateByUrl("/menu/listreclamation"));

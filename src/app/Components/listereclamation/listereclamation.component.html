@@ -8,7 +8,7 @@
       <!-- /.card-header -->
       <div class="card-body">
         <table id="example1" class="table table-bordered table-striped"style="font-size:small;" >
-          <thead style="background-color: #14B5E9;font-size:small; color: #ffffff;">
+          <thead style="font-size:small; color: #1e1261;">
           <tr>
             
             <th>Identifiant</th>
@@ -21,19 +21,23 @@
             <th>Actions</th>
           </tr>
           </thead>
-          <tbody *ngFor="let r of listReclamation | paginate: { itemsPerPage: 3, currentPage: p }">
-            <tr (dblclick)="goToEditReclamation(r.reclamationId)">
+          <tbody *ngFor="let r of listReclamation | paginate: { itemsPerPage: 3, currentPage: p }"(dblclick)="goTo(r.reclamationId)">
+           
             <td>{{r.reclamationId}}</td>
             <td>{{r.title}}</td>
             <td>{{r.category}}</td>
-            <td><mat-icon>{{r.etat}}</mat-icon></td>
+            <td class="w-5"><mat-icon class="custom-icon-size">{{r.etat}}</mat-icon></td>
             <td>{{r.status}}</td>
             <td>{{r.creationDate}}</td>
             <td>{{r.details}}</td>
-            <td><button style="background-color: #a7cdea;font-size:small; color: #0c0101;" (click)="deleteReclamation(r.reclamationId)" type="button" class="btn btn-primary"><mat-icon>delete</mat-icon></button>
-            <button style="background-color: #a7cdea;font-size:small; color: #0c0101;" (click)="updateReclamationStatus(r.reclamationId)" type="button" class="btn btn-primary"><mat-icon>update</mat-icon></button>
-          </td>
-          </tr>
+          <td><a class="btn btn-square btn-primary rounded-circle custom-btn"  (click)="updateReclamationStatus(r.reclamationId)" >
+            <i class="fas fa-pencil-alt"></i>
+          </a>
+          <a class="btn btn-square btn-primary rounded-circle custom-btn" (click)="deleteReclamation(r.reclamationId)">
+            <i class="fas fa-trash"></i>
+          </a>
+        </td>
+        
           </tbody>
         </table>
       

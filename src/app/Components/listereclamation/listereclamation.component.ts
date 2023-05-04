@@ -37,9 +37,7 @@ export class ListeReclamationComponent implements OnInit {
   window.location.reload();
   }
   
-  goToEditReclamation(id: number) {
-    this.route.navigateByUrl('/menu/editreclamation');
-  }
+  
 
   sortReclamations() {
     this.listReclamation.sort((a, b) => {
@@ -47,7 +45,7 @@ export class ListeReclamationComponent implements OnInit {
     });
   }
   goTo(id:any){
-    this.route.navigateByUrl("/menu/listreclamation")
+    this.route.navigateByUrl("/menu/editreclamation/"+id)
   }
 
 }

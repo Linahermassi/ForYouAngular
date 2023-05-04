@@ -11,7 +11,7 @@ export class ReclamationService {
  readonly Endpoint_Getreclamation ="/foryou/Reclamation/afficherAllReclamations"
  readonly Endpoint_Addreclamation ="/foryou/Reclamation/ajouterReclamation"
  readonly Endpoint_FindreclamationByid ="/foryou/Reclamation/afficherReclamationById/"
- readonly Endpoint_Editreclamation ="/foryou/Reclamation/editReclamation"
+ readonly Endpoint_Editreclamation ="/foryou/Reclamation/ModifierReclamation"
  readonly Endpoint_Deletereclamation ="/foryou/Reclamation/SupprimerReclamationById/"
  readonly Endpoint_Updatereclamation ="/foryou/Reclamation/status/en_cours/"
 
@@ -27,7 +27,7 @@ export class ReclamationService {
     return this.httpClient.get<ReclamationModel>(this.Api_Url+this.Endpoint_FindreclamationByid+ids)
   }
   EditReclamations(reclamation:ReclamationModel){
-    return this.httpClient.put(this.Api_Url+this.Endpoint_Editreclamation,reclamation)
+    return this.httpClient.put<ReclamationModel>(this.Api_Url+this.Endpoint_Editreclamation,reclamation)
   }
   DeleteReclamations(id:number){
     let ids:number = +id

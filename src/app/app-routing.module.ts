@@ -13,7 +13,7 @@ const routes: Routes = [
   {path:'menu',component:MenuComponent,
   children:[{path:'addreclamation',component:AddReclamationComponent},
   {path:'listreclamation',component:ListeReclamationComponent},
-  {path:'editreclamation',component:ModifReclamationComponent},]},
+  {path:'editreclamation/:id',component:ModifReclamationComponent},]},
   {path:'contact',component:ContactComponent},
   {path:'',redirectTo:'homepage',pathMatch:'full'},
   {path:'**',component:NotFoundComponent}
