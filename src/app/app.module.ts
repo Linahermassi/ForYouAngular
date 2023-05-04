@@ -44,7 +44,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { ModifReclamationComponent } from './Components/modif-reclamation/modif-reclamation.component';
 import { ContactComponent } from './Components/contact/contact.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //import { QRCodeModule } from 'ngx-qrcode2';
 //import {MatInputModule} from '@angular/material/input';
