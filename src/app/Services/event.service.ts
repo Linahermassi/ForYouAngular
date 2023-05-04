@@ -17,7 +17,7 @@ export class EventService {
   readonly Endpoint_FindcontractByid ="/foryou/Event/afficherEventById/"
  readonly calculatePremiumUrl = "/foryou/Simulator/calculate-premium";
  readonly setfeedbackUrl="/foryou/InscriptionEvent/SetFeedback";
-
+readonly getinsc='/foryou/InscriptionEvent/afficherAllInscriptionEvents'
 
   constructor(private httpClient : HttpClient) { }
   getEvents(){
@@ -27,7 +27,7 @@ export class EventService {
     return this.httpClient.post<EventModel[]>(this.Api_Url+this.Endpoint_Addevent,event)
   }
   EditEvent(event:EventModel){
-    return this.httpClient.put(this.Api_Url+this.Endpoint_Editevent,event)
+    return this.httpClient.put<EventModel>(this.Api_Url+this.Endpoint_Editevent,event)
   }
   DeleteEvent(id:number){
     let ids:number = +id
@@ -52,7 +52,10 @@ registerForEvent(inscription:InscriptionEvent,event: EventModel) {
 setfeedback(inscripid:number,mark:number) {
   let ids:number = +inscripid;
   console.log(this.Api_Url+this.setfeedbackUrl+`/${inscripid}/${mark}`);
-  return this.httpClient.post(this.Api_Url+this.setfeedbackUrl+'/'+ids+'/'+mark,{});
+  return this.httpClient.post(this.Api_Url+this.setfeedbackUrl+'/'+ids+'/'+mark,null);
   //console.log(error);
+}
+getInscriptions(){
+  return this.httpClient.get<InscriptionEvent[]>(this.Api_Url+this.getinsc);
 }
 }

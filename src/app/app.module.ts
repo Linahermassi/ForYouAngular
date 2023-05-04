@@ -23,6 +23,7 @@ import { SimulateurAgriInssuranceComponent } from './Components/simulateur-agri-
 import {QRCodeModule} from 'angularx-qrcode';
 import { SetfeedbackComponent } from './Components/setfeedback/setfeedback.component'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ListinscriComponent } from './Components/listinscri/listinscri.component';
 
 //import { QRCodeModule } from 'ngx-qrcode2';
 //import {MatInputModule} from '@angular/material/input';
@@ -46,6 +47,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     EventCardComponent,
     SimulateurAgriInssuranceComponent,
     SetfeedbackComponent,
+    ListinscriComponent,
   ],
   imports: [
     BrowserModule,

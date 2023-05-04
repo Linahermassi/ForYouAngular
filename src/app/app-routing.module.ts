@@ -10,13 +10,13 @@ import { ModifEventComponent } from './Components/modifevent/modifevent.componen
 import { ListeventfrontComponent } from './Components/listeventfront/listeventfront.component';
 import { SimulateurAgriInssuranceComponent } from './Components/simulateur-agri-inssurance/simulateur-agri-inssurance.component';
 import { SetfeedbackComponent } from './Components/setfeedback/setfeedback.component';
-
+import { ListinscriComponent} from './Components/listinscri/listinscri.component';
 
 const routes: Routes = [
   {path:'homepage',component:HomePageComponent,
 },
   {path:'menu',component:MenuComponent,children:[{path:'listevent',component:ListeventComponent}
-  ,{path:'addevent',component:AddEventComponent},
+  ,{path:'addevent',component:AddEventComponent},{path:'listinscri',component:ListinscriComponent},
   {path:'modifevent/:id',component:ModifEventComponent},]
   
 },

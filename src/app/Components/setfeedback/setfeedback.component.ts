@@ -24,7 +24,9 @@ export class SetfeedbackComponent {
     this.mark = value;
     console.log("id "+this.inscriptionId);
     console.log("value"+value);
-    return this._service.setfeedback(this.inscriptionId,this.mark);
+    return this._service.setfeedback(this.inscriptionId,this.mark).subscribe(()=>{
+      console.log("done")
+    });
   }
   
 }

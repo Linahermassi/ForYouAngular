@@ -29,6 +29,6 @@ import { HttpClient } from '@angular/common/http';
     }
   
     EditEvent(){
-      return this.c.EditEvent(this.Event).subscribe(()=>this._router.navigateByUrl("/menu/listcontract"));
+      return this.c.EditEvent(this.Event).subscribe(()=>this._router.navigateByUrl("/menu/listevent"));
     }
 }
