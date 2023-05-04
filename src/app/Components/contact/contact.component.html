@@ -1,0 +1,64 @@
+
+<body>
+
+<app-header></app-header>
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h6 class="section-title bg-white text-center text-primary px-3">Contactez-nous</h6>
+                <h1 class="display-6 mb-4">Si vous avez des questions, n'hésitez pas à nous contacter</h1>
+            </div>
+            <div class="row g-0 justify-content-center">
+                <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.5s">
+                        <form>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" name="ssss" [(ngModel)]="reclamation.title" class="form-control" id="exampledate1" placeholder="Entrer le titre">
+                                    <label for="name">Titre </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" name="ssss" [(ngModel)]="reclamation.category" class="form-control" id="exampledate2" placeholder="Entrer la catégorie">
+                                    <label for="subject">Catégorie</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" type="text" name="ssss" [(ngModel)]="reclamation.details" class="form-control" id="exampledate3" placeholder="Entrer les détails de votre réclamation" style="height: 200px"></textarea>
+                                    <label for="message">Détails</label>
+                                </div>
+                            </div>
+                            <div *ngIf="reclamationStatus === 'success'" class="alert alert-success" role="alert">
+                                Réclamation envoyée avec succès!
+                              </div>
+                              <div *ngIf="reclamationStatus === 'error'" class="alert alert-danger" role="alert">
+                                Erreur! Veuillez réessayer d'envoyer la réclamation.
+                              </div>
+                            <div> <form [formGroup]="aFormGroup">
+                                <ngx-recaptcha2 #captchaElem
+                                  [siteKey]="siteKey"
+                                  (reset)="handleReset()"
+                                  (expire)="handleExpire()"
+                                  (load)="handleLoad()"
+                                  (success)="handleSuccess($event)"
+                                  [useGlobalDomain]="false"
+                                  formControlName="recaptcha">
+                                </ngx-recaptcha2>
+                              </form></div>
+                            <div class="col-12 text-center">
+                                <button class="btn btn-primary rounded-pill py-3 px-5" type="submit"(click)="AddReclamations()">Envoyer</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+<app-footer></app-footer>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+</body>

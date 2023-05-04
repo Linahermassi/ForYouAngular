@@ -1,0 +1,50 @@
+<body>
+  <!-- Main content -->
+  <section class="content">
+    <br>
+    <div class="container-fluid">
+      <h4>Ajouter une nouvelle reclamation :</h4><br>
+      <div class="row justify-content-center">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="card card-primary"style="background-color:#ffffff;">
+            <div class="card-header" style="background-color: #14B5E9;">
+              <h3 class="card-title"style="color: #ffffff;">Formulaire d'ajout</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Titre </label>
+                      <input type="text" name="ssss" [(ngModel)]="reclamation.title" class="form-control" id="exampledate1" placeholder="Entrer le titre">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                      <label>catégorie
+                      </label>
+                      <input type="text" name="ssss" [(ngModel)]="reclamation.category" class="form-control" id="exampledate2" placeholder="Entrer la catégorie">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                      <label>Détails
+                      </label>
+                      <input type="text" name="ssss" [(ngModel)]="reclamation.details" class="form-control" id="exampledate3" placeholder="Entrer les détails de votre réclamation">
+                    </div>
+                  </div>
+                </div> 
+              </div>
+              <div class="card-footer d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary" style="background-color: #14B5E9;border-color: #14B5E9;margin-right: 100px;"routerLink="menu/listReclamation">Retour</button>
+                <button type="submit" class="btn btn-primary" style="background-color: #14B5E9;border-color: #14B5E9;"(click)="AddReclamations()">Modifier</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+</body>

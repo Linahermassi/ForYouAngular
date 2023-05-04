@@ -36,6 +36,15 @@ import { SetfeedbackComponent } from './Components/setfeedback/setfeedback.compo
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ListinscriComponent } from './Components/listinscri/listinscri.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ReclamationComponent } from './Components/reclamation/reclamation.component';
+import { AddReclamationComponent } from './Components/add-reclamation/add-reclamation.component';
+import { ListeReclamationComponent } from './Components/listereclamation/listereclamation.component';
+import { MatIconModule } from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxCaptchaModule } from 'ngx-captcha';
+import { ModifReclamationComponent } from './Components/modif-reclamation/modif-reclamation.component';
+import { ContactComponent } from './Components/contact/contact.component';
+
 
 //import { QRCodeModule } from 'ngx-qrcode2';
 //import {MatInputModule} from '@angular/material/input';
@@ -68,6 +77,12 @@ import { NgxPaginationModule } from 'ngx-pagination';
     SimulateurAgriInssuranceComponent,
     SetfeedbackComponent,
     ListinscriComponent,
+    ContactComponent,
+    HomePageComponent,
+    ReclamationComponent,
+    AddReclamationComponent,
+    ListeReclamationComponent,
+    ModifReclamationComponent
   ],
   imports: [
     
@@ -79,8 +94,11 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CommonModule,
     MatCardModule,
     QRCodeModule,
-    FontAwesomeModule
-   
+    FontAwesomeModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    NgxCaptchaModule,
 
   ],
   exports: [

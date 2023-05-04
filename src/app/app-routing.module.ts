@@ -21,6 +21,10 @@ import { ListeventfrontComponent } from './Components/listeventfront/listeventfr
 import { SimulateurAgriInssuranceComponent } from './Components/simulateur-agri-inssurance/simulateur-agri-inssurance.component';
 import { SetfeedbackComponent } from './Components/setfeedback/setfeedback.component';
 import { ListinscriComponent} from './Components/listinscri/listinscri.component';
+import { AddReclamationComponent } from './Components/add-reclamation/add-reclamation.component';
+import { ListeReclamationComponent } from './Components/listereclamation/listereclamation.component';
+import { ModifReclamationComponent } from './Components/modif-reclamation/modif-reclamation.component';
+import { ContactComponent } from './Components/contact/contact.component';
 
 const routes: Routes = [
   {path:'homepage',component:HomePageComponent},
@@ -32,7 +36,7 @@ const routes: Routes = [
     {path:'listeventfront',component:ListeventfrontComponent},
     {path:'simulateurafri',component:SimulateurAgriInssuranceComponent},
     {path:'setfeedback/:id',component:SetfeedbackComponent},
-   
+    {path:'contact',component:ContactComponent},
     
     
   
@@ -45,7 +49,10 @@ const routes: Routes = [
   {path:'listevent',component:ListeventComponent}
   ,{path:'addevent',component:AddEventComponent},
   {path:'listinscri',component:ListinscriComponent},
-  {path:'modifevent/:id',component:ModifEventComponent}
+  {path:'modifevent/:id',component:ModifEventComponent},
+  {path:'addreclamation',component:AddReclamationComponent},
+  {path:'listreclamation',component:ListeReclamationComponent},
+  {path:'editreclamation/:id',component:ModifReclamationComponent},
   //{path:'simulateur1/:id',component:Calcul1Component },
  
   //{path:'simulateur2/:id',component:Calcul2Component },
