@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-header">
+      {{ name_Event }}
+    </div>
+    <div class="card-body">
+      <p>{{ place }}</p>
+      <p>{{ date_Event | date: 'longDate' }}</p>
+      <p>Mark: {{ mark }}</p>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-primary">Inscription</button>
+    </div>
+  </div>

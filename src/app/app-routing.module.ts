@@ -14,7 +14,13 @@ import { Calcul2Component } from './Components/calcul2/calcul2.component';
 import { ListCreditFrontComponent } from './Components/list-credit-front/list-credit-front.component';
 
 import { StatusCreditComponent } from './Components/status-credit/status-credit.component';
-
+import { ListeventComponent } from './Components/listevent/listevent.component';
+import { AddEventComponent } from './Components/add-event/add-event.component';
+import { ModifEventComponent } from './Components/modifevent/modifevent.component';
+import { ListeventfrontComponent } from './Components/listeventfront/listeventfront.component';
+import { SimulateurAgriInssuranceComponent } from './Components/simulateur-agri-inssurance/simulateur-agri-inssurance.component';
+import { SetfeedbackComponent } from './Components/setfeedback/setfeedback.component';
+import { ListinscriComponent} from './Components/listinscri/listinscri.component';
 
 const routes: Routes = [
   {path:'homepage',component:HomePageComponent},
@@ -23,6 +29,10 @@ const routes: Routes = [
     {path:'listcreditfront/:id',component:ListCreditFrontComponent },
     {path:'simulateur2/:id',component:Calcul2Component },
     {path:'Status/:id',component:StatusCreditComponent },
+    {path:'listeventfront',component:ListeventfrontComponent},
+    {path:'simulateurafri',component:SimulateurAgriInssuranceComponent},
+    {path:'setfeedback/:id',component:SetfeedbackComponent},
+   
     
     
   
@@ -32,19 +42,25 @@ const routes: Routes = [
   {path:'listcredit',component:ListCreditComponent },
   {path:'modifiercredit/:id',component:ModifierCreditComponent},
   {path:'credit',component:CreditBackComponent },
+  {path:'listevent',component:ListeventComponent}
+  ,{path:'addevent',component:AddEventComponent},
+  {path:'listinscri',component:ListinscriComponent},
+  {path:'modifevent/:id',component:ModifEventComponent}
   //{path:'simulateur1/:id',component:Calcul1Component },
  
   //{path:'simulateur2/:id',component:Calcul2Component },
  
   
 
-
-]},
-  
-  {path:'',redirectTo:'homepage',pathMatch:'full'},
-  {path:'**',component:NotFoundComponent}
-
+]
+},
+{path:'',redirectTo:'homepage',pathMatch:'full'},
+{path:'**',component:NotFoundComponent}
 ];
+  
+
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

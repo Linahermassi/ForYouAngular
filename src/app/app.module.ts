@@ -20,12 +20,27 @@ import { Calcul2Component } from './Components/calcul2/calcul2.component';
 import { ListCreditFrontComponent } from './Components/list-credit-front/list-credit-front.component';
 
 import { StatusCreditComponent } from './Components/status-credit/status-credit.component';
+
+import { ListeventComponent } from './Components/listevent/listevent.component';
+
+import { AddEventComponent } from './Components/add-event/add-event.component';
+
+import { ModifEventComponent } from './Components/modifevent/modifevent.component';
+import { ListeventfrontComponent } from './Components/listeventfront/listeventfront.component';
+import { EventCardComponent } from './Components/event-card/event-card.component';
+import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { SimulateurAgriInssuranceComponent } from './Components/simulateur-agri-inssurance/simulateur-agri-inssurance.component';
+import {QRCodeModule} from 'angularx-qrcode';
+import { SetfeedbackComponent } from './Components/setfeedback/setfeedback.component'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ListinscriComponent } from './Components/listinscri/listinscri.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 
-
-
-
-
+//import { QRCodeModule } from 'ngx-qrcode2';
+//import {MatInputModule} from '@angular/material/input';
+//import {MatAutocompleteModule} from '@angular/material/autocomplete';
+//import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -44,16 +59,32 @@ import { NgxPaginationModule } from 'ngx-pagination';
     Calcul2Component,
     ListCreditFrontComponent,
     StatusCreditComponent,
-
-    
+    HomePageComponent,
+    ListeventComponent,
+    AddEventComponent,
+    ModifEventComponent,
+    ListeventfrontComponent,
+    EventCardComponent,
+    SimulateurAgriInssuranceComponent,
+    SetfeedbackComponent,
+    ListinscriComponent,
   ],
   imports: [
-    HttpClientModule,
+    
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     NgxPaginationModule,
-  
+    HttpClientModule,
+    CommonModule,
+    MatCardModule,
+    QRCodeModule,
+    FontAwesomeModule
+   
+
+  ],
+  exports: [
+    ListeventfrontComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

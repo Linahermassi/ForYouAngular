@@ -1,0 +1,57 @@
+<app-header></app-header>
+<div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+  
+  <h1 class="display-6 mb-4">Liste des Evenements</h1>
+</div>
+<div class="row">
+  <div class="col-md-4" *ngFor="let event of listEvent; let i=index">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">{{event.name_Event}}</h3>
+        <div class="card-subtitle">{{event.date_Event | date:'dd/MM/yyyy'}}</div>
+      </div>
+      <div class="card-body">
+        <div class="card-text">{{event.place}}</div>
+        
+      </div>
+      <div class="card-footer">
+        <div class="rating">
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9734;</span>
+          <span class="rating-count">(4)</span>
+        </div>
+      <mat-card-actions>
+        <!--<ngx-qrcode [(qrc-value)]="event.name_Event"></ngx-qrcode>-->
+        <a type="button"  data-toggle="modal" data-target="#exampleModal">
+        
+      </a>
+      <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Qr Code</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <qrcode #parent [qrdata]="event.name_Event" [width]="512" ></qrcode>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+       Qr code
+      </button>  
+      <button class="register-btn" (click)="register(event)">Register</button>
+      </mat-card-actions>
+    
+  </div>
+</div>

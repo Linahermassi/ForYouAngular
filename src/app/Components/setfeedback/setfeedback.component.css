@@ -1,0 +1,20 @@
+.rating {
+    display: inline-block;
+    font-size: 2em;
+    font-weight: bold;
+    color: #FFD700; /* yellow */
+  }
+  
+  .star {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 5px;
+  }
+  
+  .star i.fa-star {
+    transition: color .2s ease-in-out;
+  }
+  
+  .star.active i.fa-star {
+    color: #FFD700; /* yellow */
+  }
