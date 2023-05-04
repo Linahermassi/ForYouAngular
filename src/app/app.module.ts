@@ -24,6 +24,7 @@ import {QRCodeModule} from 'angularx-qrcode';
 import { SetfeedbackComponent } from './Components/setfeedback/setfeedback.component'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ListinscriComponent } from './Components/listinscri/listinscri.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 //import { QRCodeModule } from 'ngx-qrcode2';
 //import {MatInputModule} from '@angular/material/input';
@@ -58,6 +59,7 @@ import { ListinscriComponent } from './Components/listinscri/listinscri.componen
     MatCardModule,
     QRCodeModule,
     FontAwesomeModule,
+    NgxPaginationModule,
 
   ],
   exports: [

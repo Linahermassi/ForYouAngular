@@ -9,7 +9,7 @@ import { EventModel } from 'src/app/Models/EventModel';
   styleUrls: ['./listevent.component.css']
 })
 export class ListeventComponent implements OnInit{
-
+  p: number = 1;
     listEvent!: EventModel[];
     constructor( private _service:EventService, private route :Router){}
     ngOnInit(): void {

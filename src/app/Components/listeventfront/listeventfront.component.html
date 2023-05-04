@@ -23,9 +23,34 @@
           <span class="star">&#9734;</span>
           <span class="rating-count">(4)</span>
         </div>
-      <mat-card-actions>d
+      <mat-card-actions>
         <!--<ngx-qrcode [(qrc-value)]="event.name_Event"></ngx-qrcode>-->
-        <button class="register-btn" (click)="register(event)">Register</button>
+        <a type="button"  data-toggle="modal" data-target="#exampleModal">
+        
+      </a>
+      <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Qr Code</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <qrcode #parent [qrdata]="event.name_Event" [width]="512" ></qrcode>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+       Qr code
+      </button>  
+      <button class="register-btn" (click)="register(event)">Register</button>
       </mat-card-actions>
     
   </div>

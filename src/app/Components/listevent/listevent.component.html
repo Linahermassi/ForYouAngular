@@ -16,20 +16,21 @@
             
           </tr>
           </thead>
-          <tbody *ngFor="let e of listEvent">
+          <tbody *ngFor="let e of listEvent | paginate: { itemsPerPage: 8, currentPage: p }">
           <tr (click)="goTo(e.event_id)">
             <td>{{e.event_id}}</td>
             <td>{{e.date_Event}}</td>
             <td>{{e.name_Event}}</td>
             <td>{{e.place}}</td>
             <td>{{e.mark}}</td>
-            
-          </tr>
-          <button (click)="deleteEvent(e.event_id)" type="button" class="btn btn-
+            <button (click)="deleteEvent(e.event_id)" type="button" class="btn btn-
 primary">DELETE</button>
+          </tr>
+          
           </tbody>
         </table>
       </div>
+      <div class="pagination justify-content-center"><pagination-controls (pageChange)="p = $event"></pagination-controls></div>
       <!-- /.card-body -->
     </div>
     <!-- /.card -->
