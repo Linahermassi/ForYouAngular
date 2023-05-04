@@ -10,6 +10,7 @@ import { ReclamationService } from 'src/app/Services/reclamation.service';
 })
 export class ListeReclamationComponent implements OnInit {
   listReclamation!: ReclamationModel[];
+  p: number = 1;
   constructor( private _service:ReclamationService, private route :Router){}
   ngOnInit(): void {
     this.GetReclamations()
@@ -36,6 +37,15 @@ export class ListeReclamationComponent implements OnInit {
   window.location.reload();
   }
   
+  goToEditReclamation(id: number) {
+    this.route.navigateByUrl('/menu/editreclamation');
+  }
+
+  sortReclamations() {
+    this.listReclamation.sort((a, b) => {
+      return new Date(a.creationDate).getTime() - new Date(b.creationDate).getTime();
+    });
+  }
   goTo(id:any){
     this.route.navigateByUrl("/menu/listreclamation")
   }

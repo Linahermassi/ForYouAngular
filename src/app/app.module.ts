@@ -19,6 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import { ModifReclamationComponent } from './Components/modif-reclamation/modif-reclamation.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     HomePageComponent,
     ReclamationComponent,
     AddReclamationComponent,
-    ListeReclamationComponent
+    ListeReclamationComponent,
+    ModifReclamationComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     BrowserAnimationsModule,
     MatIconModule,
     ReactiveFormsModule,
-    NgxCaptchaModule
+    NgxCaptchaModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

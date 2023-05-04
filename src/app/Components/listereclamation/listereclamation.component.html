@@ -3,6 +3,7 @@
     <div class="card">
       <div class="card-header">
         <h3 class="card-title">Liste des reclamations : </h3>
+        <button class="btn btn-primary" (click)="sortReclamations()" style="float:right;"><mat-icon>sort</mat-icon></button>
       </div>
       <!-- /.card-header -->
       <div class="card-body">
@@ -20,8 +21,8 @@
             <th>Actions</th>
           </tr>
           </thead>
-          <tbody *ngFor="let r of listReclamation">
-          <tr (click)="goTo(r.reclamationId)">
+          <tbody *ngFor="let r of listReclamation | paginate: { itemsPerPage: 3, currentPage: p }">
+            <tr (dblclick)="goToEditReclamation(r.reclamationId)">
             <td>{{r.reclamationId}}</td>
             <td>{{r.title}}</td>
             <td>{{r.category}}</td>
@@ -30,11 +31,14 @@
             <td>{{r.creationDate}}</td>
             <td>{{r.details}}</td>
             <td><button style="background-color: #a7cdea;font-size:small; color: #0c0101;" (click)="deleteReclamation(r.reclamationId)" type="button" class="btn btn-primary"><mat-icon>delete</mat-icon></button>
-            <button style="background-color: #a7cdea;font-size:small; color: #0c0101;" (click)="updateReclamationStatus(r.reclamationId)" type="button" class="btn btn-primary"><mat-icon>edit</mat-icon></button></td>
+            <button style="background-color: #a7cdea;font-size:small; color: #0c0101;" (click)="updateReclamationStatus(r.reclamationId)" type="button" class="btn btn-primary"><mat-icon>update</mat-icon></button>
+          </td>
           </tr>
           </tbody>
         </table>
+      
       </div>
+      <div class="pagination justify-content-center"><pagination-controls (pageChange)="p = $event"></pagination-controls></div>
       <!-- /.card-body -->
     </div>
     <!-- /.card -->
