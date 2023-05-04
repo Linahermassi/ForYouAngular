@@ -33,10 +33,18 @@ export class ListecontractComponent implements OnInit {
       this._service.getContracts().subscribe(data=>{
         this.contracts=data;}
       )
+      window.location.reload();
   }
- /* deleteContract(id:number) {
-    this._service.DeleteContracts(id).subscribe(()=>this.route.navigateByUrl('/listcredit'));
+  sortReclamations() {
+    this.listContract.sort((a, b) => {
+      return new Date(a.exprirationDate).getTime() - new Date(b.exprirationDate).getTime();
+    });
+  }
+  GetRenewableContract(){
+    return this._service.getRenewableContract().subscribe(res=>{console.log(res);
+    this.listContract=res});
 
-  }*/
+  }
+
 
 }

@@ -9,6 +9,7 @@ import { ListecontractComponent } from './Components/listecontract/listecontract
 import { ModifContractComponent } from './Components/modif-contract/modif-contract.component';
 import { PaymentComponent } from './Components/payment/payment.component';
 import { ContratClientComponent } from './Components/contrat-client/contrat-client.component';
+import { ContartRenouvComponent } from './Components/contart-renouv/contart-renouv.component';
 
 const routes: Routes = [
   {path:'homepage',component:HomePageComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'contratClient',component:ContratClientComponent},
   {path:'menu',component:MenuComponent,children :[
   {path:'listcontract',component:ListecontractComponent},
+  {path:'renouvcontract',component:ContartRenouvComponent},
   {path:'addcontract',component:AddContractComponent},
   {path:'modifcontract/:id',component:ModifContractComponent},
 ]},

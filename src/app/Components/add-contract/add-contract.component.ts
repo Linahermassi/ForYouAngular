@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
-import { MatOptionSelectionChange } from '@angular/material/core';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { ContractModel } from 'src/app/Models/ContractModel';
 import { ContractService } from 'src/app/Services/contract.service';
 

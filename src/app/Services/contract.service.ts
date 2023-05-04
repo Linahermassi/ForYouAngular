@@ -11,6 +11,9 @@ export class ContractService {
   readonly Endpoint_Editcontract ="/foryou/Contract/ModifierContract"
   readonly Endpoint_Deletecontract ="/foryou/Contract/SupprimerContractById/"
   readonly Endpoint_FindcontractByid ="/foryou/Contract/afficherContractById/"
+  readonly Endpoint_GetRenewableContract ="/foryou/Contract/afficherRenewableContract"
+  readonly Endpoint_GetScore ="/foryou/Score/Scoring/"
+
 
   constructor(private httpClient : HttpClient) { }
   getContracts(){
@@ -30,7 +33,12 @@ export class ContractService {
     let ids:number = +id
     return this.httpClient.delete(this.Api_Url+this.Endpoint_Deletecontract+ids)
   }
-
+  getRenewableContract(){
+    return this.httpClient.get<ContractModel[]>(this.Api_Url+this.Endpoint_GetRenewableContract)
+  }
+  getScore(idc:number,idco:number){
+    return this.httpClient.get<number[]>(this.Api_Url+this.Endpoint_GetScore+idc+"/"+idco)
+  }
 
 }
 

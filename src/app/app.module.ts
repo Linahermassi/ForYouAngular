@@ -1,3 +1,4 @@
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -19,6 +20,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ContartRenouvComponent } from './Components/contart-renouv/contart-renouv.component'
 import { PaymentComponent } from './Components/payment/payment.component';
 import { ContratClientComponent } from './Components/contrat-client/contrat-client.component'
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -43,8 +45,8 @@ import { ContratClientComponent } from './Components/contrat-client/contrat-clie
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgxPaginationModule
-
+    NgxPaginationModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

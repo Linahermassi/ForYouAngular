@@ -17,8 +17,8 @@
           <img class="img-fluid rounded mb-4" src="assets/img/pdf.jpg" alt="" />
           <div class="team-text text-center">
             <div class="team-title">
-              <h5>Identifiant de contrat : 5</h5>
-              <span>Type : Credit Insurance </span>
+              <h5>Identifiant de contrat : 1</h5>
+              <span>Type : Agriculture_Insurance </span>
             </div>
             <div class="team-social">
               <a class="btn btn-square btn-primary rounded-circle" href="#">
@@ -37,10 +37,10 @@
           <div class="team-text text-center">
             <div class="team-title">
               <h5>Identifiant de contrat : 5</h5>
-              <span>Type : Credit Insurance </span>
+              <span>Type : Car_Insurance  </span>
             </div>
             <div class="team-social">
-              <a class="btn btn-square btn-primary rounded-circle" href="#">
+              <a class="btn btn-square btn-primary rounded-circle" href="assets/img/contrat5.pdf">
                 <i class="fas fa-eye"></i>
               </a>
               <a
@@ -51,6 +51,7 @@
               </a>
             </div>
           </div>
+
         </div>
       </div>
       <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -58,12 +59,10 @@
           class="text-center mx-auto mb-5 wow fadeInUp"
           data-wow-delay="0.1s"
           style="max-width: 600px"
-        >
+        ><br><br><br>
           <h6 class="section-title bg-white text-center text-primary px-3">
-            Suive l'etat de votre score client
+            Suivre l'etat de votre score client
           </h6>
-          <br>
-          <br>
           <br>
           <br>
           <br>
@@ -76,7 +75,7 @@
                   class="form-control"
                   id="name"
                   placeholder="Prix avant score"
-                  disabled
+                  disabled value={{list[0]}}
                 />
                 <label for="name">Prix avant score </label>
               </div>
@@ -88,7 +87,7 @@
                   class="form-control"
                   id="subject"
                   placeholder="Prix après score"
-                  disabled
+                  disabled value={{list[2]}}
                 />
                 <label for="subject">Prix après score</label>
               </div>
@@ -100,7 +99,7 @@
                   class="form-control"
                   id="subject"
                   placeholder="Votre score"
-                  disabled
+                  disabled value={{list[1]}}
                 />
                 <label for="subject">Votre score</label>
               </div>
@@ -108,7 +107,7 @@
             <div class="col-12 text-center">
               <button
                 class="btn btn-primary rounded-pill py-3 px-5"
-                type="submit"
+                type="submit"(click)="GetScore()"
               >
                 Afficher le score
               </button>
