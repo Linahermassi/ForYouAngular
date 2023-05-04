@@ -25,6 +25,12 @@ import { AddReclamationComponent } from './Components/add-reclamation/add-reclam
 import { ListeReclamationComponent } from './Components/listereclamation/listereclamation.component';
 import { ModifReclamationComponent } from './Components/modif-reclamation/modif-reclamation.component';
 import { ContactComponent } from './Components/contact/contact.component';
+import { AddContractComponent } from './Components/add-contract/add-contract.component';
+import { ListecontractComponent } from './Components/listecontract/listecontract.component';
+import { ModifContractComponent } from './Components/modif-contract/modif-contract.component';
+import { PaymentComponent } from './Components/payment/payment.component';
+import { ContratClientComponent } from './Components/contrat-client/contrat-client.component';
+import { ContartRenouvComponent } from './Components/contart-renouv/contart-renouv.component';
 
 const routes: Routes = [
   {path:'homepage',component:HomePageComponent},
@@ -37,7 +43,8 @@ const routes: Routes = [
     {path:'simulateurafri',component:SimulateurAgriInssuranceComponent},
     {path:'setfeedback/:id',component:SetfeedbackComponent},
     {path:'contact',component:ContactComponent},
-    
+    {path:'payment',component:PaymentComponent},
+  {path:'contratClient',component:ContratClientComponent},
     
   
   {path:'menu',component:MenuComponent,children :[
@@ -53,6 +60,10 @@ const routes: Routes = [
   {path:'addreclamation',component:AddReclamationComponent},
   {path:'listreclamation',component:ListeReclamationComponent},
   {path:'editreclamation/:id',component:ModifReclamationComponent},
+  {path:'listcontract',component:ListecontractComponent},
+  {path:'renouvcontract',component:ContartRenouvComponent},
+  {path:'addcontract',component:AddContractComponent},
+  {path:'modifcontract/:id',component:ModifContractComponent},
   //{path:'simulateur1/:id',component:Calcul1Component },
  
   //{path:'simulateur2/:id',component:Calcul2Component },

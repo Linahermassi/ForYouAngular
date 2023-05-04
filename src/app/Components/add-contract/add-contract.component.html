@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header">
+                <h1 class="text-center mb-5" style="color: #1E1261">Ajout de contrat</h1>
+              </div>
+              <div class="card-body row-g-12 ">
+                <form>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-floating">
+                        <input type="Date" class="form-control" id="creationDate" name="creationDate" placeholder="Date de création">
+                        <label for="creationDate">Date de création</label>
+                      </div>
+                      <br>
+                      <div class="form-floating">
+                        <input type="Date" class="form-control" id="StartDate" name="StartDate" placeholder="Date de début">
+                        <label for="StartDate">Date de début</label>
+                      </div>
+                      <br>
+                      <div class="form-floating">
+                        <input type="Date" class="form-control" id="ExpirationDate" name="ExpirationDate" placeholder="Date d'expiration">
+                        <label for="ExpirationDate">Date d'expiration</label>
+                      </div>
+                      <br>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-floating">
+                        <input type="number" class="form-control" id="Prix" name="Prix" placeholder="Prix de contrat">
+                        <label for="Prix">Prix de contrat</label>
+                      </div>
+                <!-- <div class="form-group">
+                      <mat-form-field>
+                      <mat-label>Formalité de paiement
+                      </mat-label>
+                 <h3 class="card-title"style="color: #ffffff;">Formulaire d'ajout</h3>
+                        <mat-option value="BankCard">BackCard</mat-option>
+                      </mat-autocomplete>
+                    </mat-form-field>
+                    </div>-->
+                      <br>
+                      <div class="form-floating">
+                        <input type="text" class="form-control" id="Formality" name="Formality" placeholder="Formalité de paiement">
+                        <label for="Formality">Formalité de paiement</label>
+                      </div>
+                      <br>
+                      <div class="form-floating">
+                        <input type="Date" class="form-control" id="paymentDate" name="paymentDate" placeholder="Date de paiement">
+                        <label for="paymentDate">Date de paiement</label>
+                      </div>
+                      <br>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <div class="card-footer d-flex justify-content-center">
+                      <button type="submit" class="btn btn-sm btn-light rounded-pill py-2 px-4 d-none d-lg-block" style="background-color: #1E1261;border-color: #1E1261;color:white;margin-right: 100px;"(click)="AddContracts()">Ajouter</button>
+                      <button type="submit" class="btn btn-sm btn-light rounded-pill py-2 px-4 d-none d-lg-block" style="background-color: #1E1261;border-color: #1E1261;color:white;">Imprimer</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

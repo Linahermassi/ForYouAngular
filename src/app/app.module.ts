@@ -1,3 +1,4 @@
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -45,7 +46,12 @@ import { NgxCaptchaModule } from 'ngx-captcha';
 import { ModifReclamationComponent } from './Components/modif-reclamation/modif-reclamation.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { AddContractComponent } from './Components/add-contract/add-contract.component';
+import { ListecontractComponent } from './Components/listecontract/listecontract.component';
+import { ModifContractComponent } from './Components/modif-contract/modif-contract.component';
+import { ContartRenouvComponent } from './Components/contart-renouv/contart-renouv.component'
+import { PaymentComponent } from './Components/payment/payment.component';
+import { ContratClientComponent } from './Components/contrat-client/contrat-client.component'
 //import { QRCodeModule } from 'ngx-qrcode2';
 //import {MatInputModule} from '@angular/material/input';
 //import {MatAutocompleteModule} from '@angular/material/autocomplete';
@@ -82,10 +88,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReclamationComponent,
     AddReclamationComponent,
     ListeReclamationComponent,
-    ModifReclamationComponent
+    ModifReclamationComponent,
+    AddContractComponent,
+    ListecontractComponent,
+    ModifContractComponent,
+    ContartRenouvComponent,
+    PaymentComponent,
+    ContratClientComponent
   ],
   imports: [
-    
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -102,7 +114,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
   ],
   exports: [
-    ListeventfrontComponent
+    ListeventfrontComponent,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

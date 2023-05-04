@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header">
+                <h1 class="text-center mb-5" style="color: #1E1261">Modification du contrat</h1>
+              </div>
+              <div class="card-body row-g-12 ">
+                <form>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-floating">
+                        <input type="Date" class="form-control" id="creationDate" name="creationDate" placeholder="Date de création"[(ngModel)]="contract.creationDate">
+                        <label for="creationDate">Date de création</label>
+                      </div>
+                      <br>
+                      <div class="form-floating">
+                        <input type="Date" class="form-control" id="StartDate" name="StartDate" placeholder="Date de début"[(ngModel)]="contract.startDate">
+                        <label for="StartDate">Date de début</label>
+                      </div>
+                      <br>
+                      <div class="form-floating">
+                        <input type="Date" class="form-control" id="ExpirationDate" name="ExpirationDate" placeholder="Date d'expiration"[(ngModel)]="contract.exprirationDate">
+                        <label for="ExpirationDate">Date d'expiration</label>
+                      </div>
+                      <br>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-floating">
+                        <input type="number" class="form-control" id="Prix" name="Prix" placeholder="Prix de contrat"[(ngModel)]="contract.ceilingAmount">
+                        <label for="Prix">Prix de contrat</label>
+                      </div>
+                      <br>
+                      <div class="form-floating">
+                        <input type="text" class="form-control" id="Formality" name="Formality" placeholder="Formalité de paiement"[(ngModel)]="contract.paymentFormality">
+                        <label for="Formality">Formalité de paiement</label>
+                      </div>
+                      <br>
+                      <div class="form-floating">
+                        <input type="Date" class="form-control" id="paymentDate" name="paymentDate" placeholder="Date de paiement"[(ngModel)]="contract.paymentDate">
+                        <label for="paymentDate">Date de paiement</label>
+                      </div>
+                      <br>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <div class="card-footer d-flex justify-content-center">
+                      <button type="submit" class="btn btn-sm btn-light rounded-pill py-2 px-4 d-none d-lg-block" style="background-color: #1E1261;border-color: #1E1261;color:white;margin-right: 100px;"routerLink="menu/listcontract">Retour</button>
+                <button type="submit"class="btn btn-sm btn-light rounded-pill py-2 px-4 d-none d-lg-block" style="background-color: #1E1261;border-color: #1E1261;color:white;"(click)="EditContracts()">Modifier</button>
+                <button type="submit" class="btn btn-sm btn-light rounded-pill py-2 px-4 d-none d-lg-block" style="background-color: #1E1261;border-color: #1E1261;color:white;margin-left: 100px;">Imprimer</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
