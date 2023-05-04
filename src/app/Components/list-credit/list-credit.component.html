@@ -3,6 +3,7 @@
     <div class="card">
       <div class="card-header">
         <h3 class="card-title">Liste des credits : </h3>
+        <button class="btn btn-primary" (click)="sortCredits()" style="float:right;">Tri</button>
       </div>
       <!-- /.card-header -->
       <div class="card-body">
@@ -21,7 +22,7 @@
             <th>Type</th>
           </tr>
           </thead>
-          <tbody *ngFor="let c of listCredit">
+          <tbody *ngFor="let c of listCredit | paginate: { itemsPerPage: 3, currentPage: p }" >
           <tr>
             <td>{{c.creditId}}</td>
             <td>{{c.startDate}}</td>
@@ -46,6 +47,7 @@
         
         
       </div>
+      <div class="pagination justify-content-center"><pagination-controls (pageChange)="p = $event"></pagination-controls></div>
       <!-- /.card-body -->
     </div>
 </body>

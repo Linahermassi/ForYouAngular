@@ -11,25 +11,27 @@
               </div>
 
             <div class="card-body">
-              <div class="text-center">
-                <!-- <div *ngIf="Credit.status === Statecredit.ACCEPTED"class="table table-striped">!-->
-                <h4>Votre crédit a été accepté!</h4>
-              </div>
-              <div class="text-center my-4">
-                <button class="btn btn-primary" style="font-size: 18px;" (click)="exportPDF(Credit.creditId)">Générer votre PDF</button>
-              </div>
+                  <div class="text-center">
+                     <div *ngIf="Credit.status.toString() == 'ACCEPTED'" class="table table-striped">
+                       <h4>Votre crédit a été accepté!</h4>
+              
+                        <div class="text-center my-4">
+                        <button class="btn btn-primary" style="font-size: 18px;" (click)="exportPDF(Credit.creditId)">Générer votre PDF</button>
+                         </div>
+                      </div>
+                  </div>
             </div>
-            <!-- </div>!-->
 
-             <!---
+
+             
                <div class="card-body">
-                <div class="text-center">
-                  <div *ngIf="Credit.status === Statecredit.REFUSED"class="table table-striped">
+                    <div class="text-center">
+                     <div *ngIf="Credit.status.toString() == 'REFUSED'"class="table table-striped">
                        <h4>Votre crédit a été refusé!</h4>
-                   </div>
+                     </div>
                 
-                </div>
-              </div>!-->
+                    </div>
+              </div>
 
           </div>
         </div>

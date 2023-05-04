@@ -9,6 +9,7 @@ import { CreditService } from 'src/app/Services/credit.service';
   styleUrls: ['./list-credit.component.css']
 })
 export class ListCreditComponent implements OnInit {
+  p: number = 1;
   listCredit!: CreditModel[];
   list!:number[][];
   constructor( private _service:CreditService, private route :Router){}
@@ -26,6 +27,11 @@ export class ListCreditComponent implements OnInit {
   deleteCredit(id:number) {
     this._service.DeleteCredit(id).subscribe(()=>this.route.navigateByUrl('/listcredit'));
     
+  }
+  sortCredits() {
+    this.listCredit.sort((a, b) => {
+      return new Date(a.startDate).getTime() - new Date(b.startDate).getTime();
+    });
   }
   
 

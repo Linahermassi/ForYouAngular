@@ -20,6 +20,9 @@ import { Calcul2Component } from './Components/calcul2/calcul2.component';
 import { ListCreditFrontComponent } from './Components/list-credit-front/list-credit-front.component';
 
 import { StatusCreditComponent } from './Components/status-credit/status-credit.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+
+
 
 
 
@@ -38,19 +41,19 @@ import { StatusCreditComponent } from './Components/status-credit/status-credit.
     CreditBackComponent,
     Calcul1Component,
     AddCreditFrontComponent,
-    
     Calcul2Component,
     ListCreditFrontComponent,
-  
     StatusCreditComponent,
-   
+
     
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,7 @@
 
 
 
-<body>
+
   
   <section class="content">
     <div class="container-fluid">
@@ -40,9 +40,14 @@
                   </div>
                 </div>
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary mr-3" routerLink="/menu/listcredit">Retour</button>
-                  <button type="submit" class="btn btn-primary" (click)="EditCredits()">Modifier</button>
+                  <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-sm btn-light rounded-pill py-2 px-4" style="color: #f6f6f8; background-color:#1E1261" routerLink="/menu/listcredit">Retour</button>
+                    <button type="submit" class="btn btn-sm btn-light rounded-pill py-2 px-4" style="color: #f6f6f8; background-color:#1E1261" (click)="EditCredits()">Modifier</button>
+                  </div>
+                  
+                  
                 </div>
               </form>
             </div>
          
+           
