@@ -97,9 +97,7 @@
         <a
           href="index.html"
           class="nav-item nav-link active"
-          style="color: #14b5e9 ;"
-          >Acceuil</a
-        >
+          style="color: #14b5e9 ;">Acceuil</a>
         <a href="#about-section" class="nav-item nav-link">A propos</a>
         <a href="#service-section" class="nav-item nav-link">Nos services</a>
         <a href="#team-section" class="nav-item nav-link">Notre équipe</a>
@@ -109,11 +107,8 @@
         <a href="contact" class="nav-item nav-link">Contactez-nous</a>
 
       </div>
-      <a
-        href="#"
-        class="btn btn-sm btn-light rounded-pill py-2 px-4 d-none d-lg-block"
-        >Se connecter</a
-      >
+      <a *ngIf="!loggedIn" routerLink="/login" class="btn btn-sm btn-light rounded-pill py-2 px-4 d-none d-lg-block">Login</a>
+      <a *ngIf="loggedIn" (click)="logout()" class="btn btn-sm btn-light rounded-pill py-2 px-4 d-none d-lg-block">Logout</a>
     </div>
   </nav>
   <!-- Navbar End -->

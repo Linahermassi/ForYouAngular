@@ -1,0 +1,90 @@
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Solvabilities stats</h1>
+          </div>
+        </div>
+      </div>
+</section>
+<section class="content">
+    <!-- Default box -->
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Solvability</h3>     
+            </div>
+            <div class="card-body">
+                <h2>Stats</h2>
+                <div id="myChart" style="max-width:700px; height:400px"></div>
+                <div class="row g-0 justify-content-center">
+                    <div >
+                        <form [formGroup]="form">
+                            <div class="row">
+                                <div class="col-md-12 mb-2">
+                                    <div class="form-group">
+                                        <label for="currentAssets">Current Assets</label>
+                                        <input 
+                                        [(ngModel)]="currentAssets"
+                                        type="number" 
+                                        class="form-control" 
+                                        formControlName="currentAssets" placeholder="Current assets">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-2">
+                                    <div class="form-group">
+                                        <label for="currentLiabilities">Current Liabilities</label>
+                                        <input 
+                                        [(ngModel)]="currentLiabilities"
+                                        type="number" 
+                                        class="form-control" 
+                                        formControlName="currentLiabilities" placeholder="Current Liabilities">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-2">
+                                    <div class="form-group">
+                                        <label for="nonCurrentAssets">Non Current Assets</label>
+                                        <input 
+                                        [(ngModel)]="nonCurrentAssets"
+                                        type="number" 
+                                        class="form-control" 
+                                        formControlName="nonCurrentAssets" placeholder="Non Current assets">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-2">
+                                    <div class="form-group">
+                                        <label for="currentLiabilities">Non Current Liabilities</label>
+                                        <input 
+                                        [(ngModel)]="nonCurrentLiabilities"
+                                        type="number" 
+                                        class="form-control" 
+                                        formControlName="nonCurrentLiabilities" placeholder="Non Current Liabilities">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-2">
+                                    <div class="form-group">
+                                        <label for="year">year</label>
+                                        <input 
+                                        [(ngModel)]="year"
+                                        type="number" 
+                                        class="form-control" 
+                                        formControlName="year" placeholder="year">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <button class="btn btn-primary" (click)="new()">Calculate</button>
+                                </div>
+                            </div>    
+                        </form>
+                    </div>
+                </div>
+            </div>    
+        </div>    
+    </div>
+</section>     

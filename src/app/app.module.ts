@@ -10,22 +10,16 @@ import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { HomePageComponent } from './Components/home-page/home-page.component';
 import { AddCreditComponent } from './Components/add-credit/add-credit.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { ListCreditComponent } from './Components/list-credit/list-credit.component';
 import { ModifierCreditComponent } from './Components/modifier-credit/modifier-credit.component';
 import { CreditBackComponent } from './Components/credit-back/credit-back.component';
 import { Calcul1Component } from './Components/calcul1/calcul1.component';
 import { AddCreditFrontComponent } from './Components/add-credit-front/add-credit-front.component';
-
 import { Calcul2Component } from './Components/calcul2/calcul2.component';
 import { ListCreditFrontComponent } from './Components/list-credit-front/list-credit-front.component';
-
 import { StatusCreditComponent } from './Components/status-credit/status-credit.component';
-
 import { ListeventComponent } from './Components/listevent/listevent.component';
-
 import { AddEventComponent } from './Components/add-event/add-event.component';
-
 import { ModifEventComponent } from './Components/modifevent/modifevent.component';
 import { ListeventfrontComponent } from './Components/listeventfront/listeventfront.component';
 import { EventCardComponent } from './Components/event-card/event-card.component';
@@ -41,7 +35,6 @@ import { ReclamationComponent } from './Components/reclamation/reclamation.compo
 import { AddReclamationComponent } from './Components/add-reclamation/add-reclamation.component';
 import { ListeReclamationComponent } from './Components/listereclamation/listereclamation.component';
 import { MatIconModule } from '@angular/material/icon';
-import { ReactiveFormsModule } from '@angular/forms';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { ModifReclamationComponent } from './Components/modif-reclamation/modif-reclamation.component';
 import { ContactComponent } from './Components/contact/contact.component';
@@ -56,6 +49,23 @@ import { ContratClientComponent } from './Components/contrat-client/contrat-clie
 //import {MatInputModule} from '@angular/material/input';
 //import {MatAutocompleteModule} from '@angular/material/autocomplete';
 //import { MatPaginatorModule } from '@angular/material/paginator';
+import { LoginComponent } from './Components/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SignUpComponent } from './Components/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './Components/reset-password/reset-password.component'
+import { ToastrModule } from 'ngx-toastr';
+import { UsersComponent } from './Components/users/users.component';
+import { UserDetailsComponent } from './Components/users/user-details/user-details.component';
+import { UserListComponent } from './Components/users/user-list/user-list.component';
+import { UserUpdateComponent } from './Components/users/user-update/user-update.component';
+import { UserNewComponent } from './Components/users/user-new/user-new.component';
+import { JwtModule  } from '@auth0/angular-jwt';
+import { environment } from 'src/environments/environment';
+import { SolvabilitiesComponent } from './Components/solvabilities/solvabilities.component';
+import { IncomesComponent } from './Components/incomes/incomes.component';
+
+const baseUri = environment.baseUri;
 
 @NgModule({
   declarations: [
@@ -89,30 +99,51 @@ import { ContratClientComponent } from './Components/contrat-client/contrat-clie
     AddReclamationComponent,
     ListeReclamationComponent,
     ModifReclamationComponent,
+    LoginComponent,
+    SignUpComponent,
     AddContractComponent,
     ListecontractComponent,
     ModifContractComponent,
     ContartRenouvComponent,
     PaymentComponent,
-    ContratClientComponent
+    ContratClientComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent,
+    UsersComponent,
+    UserDetailsComponent,
+    UserListComponent,
+    UserUpdateComponent,
+    UserNewComponent,
+    SolvabilitiesComponent,
+    IncomesComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgxPaginationModule,
-    HttpClientModule,
+    ReactiveFormsModule,
     CommonModule,
+    NgxPaginationModule,
     MatCardModule,
     QRCodeModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
     MatIconModule,
-    ReactiveFormsModule,
     NgxCaptchaModule,
-
+    ToastrModule.forRoot(),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => localStorage.getItem('token'),
+        allowedDomains: ['localhost:8081'],
+        disallowedRoutes: [`${baseUri}/foryou/authenticate`,
+         `${baseUri}/foryou/forgot_password/*`,
+         `${baseUri}/foryou/reset_password/*/*`,
+         `${baseUri}/foryou/register/*`]
+      },
+    })
   ],
+
   exports: [
     ListeventfrontComponent,
     MatIconModule,

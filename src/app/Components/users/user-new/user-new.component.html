@@ -1,0 +1,111 @@
+<div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Add new user</h3>
+    </div>
+    <form [formGroup]="form">
+      <div class="card-body">
+        <div class="form-group">
+          <div class="form-floating">
+            <input type="text" class="form-control" formControlName="firstName" placeholder="First Name">
+            <label for="firstName">First Name</label>
+          </div>
+          <div *ngIf="form.controls['firstName'].invalid && (form.controls['firstName'].dirty || form.controls['firstName'].touched)" class="alert alert-danger">
+            <div *ngIf="form.controls['firstName'].hasError('required')">First Name is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-floating">
+            <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name">
+            <label for="lastName">Last Name</label>
+          </div>
+          <div *ngIf="form.controls['lastName'].invalid && (form.controls['lastName'].dirty || form.controls['lastName'].touched)" class="alert alert-danger">
+            <div *ngIf="form.controls['lastName'].hasError('required')">Last Name is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-floating">
+            <input type="text" class="form-control" formControlName="username" placeholder="Username">
+            <label for="username">Username</label>
+          </div>
+          <div *ngIf="form.controls['username'].invalid && (form.controls['username'].dirty || form.controls['username'].touched)" class="alert alert-danger">
+            <div *ngIf="form.controls['username'].hasError('required')">Username is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-floating">
+            <input type="email" class="form-control" formControlName="email" placeholder="Email">
+            <label for="email">Email</label>
+          </div>
+          <div *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)" class="alert alert-danger">
+            <div *ngIf="form.controls['email'].hasError('required')">Email is required</div>
+            <div *ngIf="form.controls['email'].hasError('email')">Invalid email format</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-floating">
+            <input type="text" class="form-control" formControlName="phoneNumber" placeholder="Phone Number">
+            <label for="phoneNumber">Phone Number</label>
+          </div>
+          <div *ngIf="form.controls['phoneNumber'].invalid && (form.controls['phoneNumber'].dirty || form.controls['phoneNumber'].touched)" class="alert alert-danger">
+            <div *ngIf="form.controls['phoneNumber'].hasError('required')">Phone Number is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-floating">
+            <input type="date" class="form-control" formControlName="birthdate" placeholder="Birthdate">
+            <label for="birthdate">Birthdate</label>
+          </div>
+          <div         *ngIf="form.controls['birthdate'].invalid && (form.controls['birthdate'].dirty || form.controls['birthdate'].touched)" class="alert alert-danger">
+            <div *ngIf="form.controls['birthdate'].hasError('required')">Birthdate is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-floating">
+            <input type="text" class="form-control" formControlName="address" placeholder="Address">
+            <label for="address">Address</label>
+          </div>
+          <div *ngIf="form.controls['address'].invalid && (form.controls['address'].dirty || form.controls['address'].touched)" class="alert alert-danger">
+            <div *ngIf="form.controls['address'].hasError('required')">Address is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-floating">
+            <select class="form-control" formControlName="role" placeholder="Role">
+              <option value="CLIENT">Client</option>
+              <option value="EXPERT">Expert</option>
+              <option value="INSURER">Insurer</option>
+              <option value="ADMIN">Admin</option>
+            </select>
+            <label for="role">Role</label>
+          </div>
+          <div *ngIf="form.controls['role'].invalid && (form.controls['role'].dirty || form.controls['role'].touched)" class="alert alert-danger">
+            <div *ngIf="form.controls['role'].hasError('required')">Role is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-floating">
+            <input type="password" class="form-control" formControlName="password" placeholder="Password">
+            <label for="password">Password</label>
+          </div>
+          <div *ngIf="form.controls['password'].invalid && (form.controls['password'].dirty || form.controls['password'].touched)" class="alert alert-danger">
+            <div *ngIf="form.controls['password'].hasError('required')">Password is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-floating">
+            <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirm Password">
+            <label for="confirmPassword">Confirm Password</label>
+          </div>
+          <div *ngIf="form.controls['confirmPassword'].invalid && (form.controls['confirmPassword'].dirty || form.controls['confirmPassword'].touched)" class="alert alert-danger">
+            <div *ngIf="form.controls['confirmPassword'].hasError('required')">Confirm Password is required</div>
+            <div *ngIf="form.controls['confirmPassword'].hasError('passwordMismatch')">Passwords do not match</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" (click)="add()">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+  

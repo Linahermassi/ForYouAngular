@@ -1,6 +1,7 @@
 (function ($) {
     "use strict";
-
+    console.log('here')
+;
     // Spinner
     var spinner = function () {
         setTimeout(function () {
@@ -106,9 +107,5 @@
             }
         }
     });
-
-    $(document).ready(function () {
-      $('#example').DataTable();
-  });
 })(jQuery);
 

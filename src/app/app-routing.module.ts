@@ -25,10 +25,22 @@ import { AddReclamationComponent } from './Components/add-reclamation/add-reclam
 import { ListeReclamationComponent } from './Components/listereclamation/listereclamation.component';
 import { ModifReclamationComponent } from './Components/modif-reclamation/modif-reclamation.component';
 import { ContactComponent } from './Components/contact/contact.component';
+import { LoginComponent } from './Components/login/login.component';
+import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { AddContractComponent } from './Components/add-contract/add-contract.component';
 import { ListecontractComponent } from './Components/listecontract/listecontract.component';
 import { ModifContractComponent } from './Components/modif-contract/modif-contract.component';
 import { PaymentComponent } from './Components/payment/payment.component';
+import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
+import { AuthGuard } from './Guard/auth-guard.guard';
+import { UsersComponent } from './Components/users/users.component';
+import { UserNewComponent } from './Components/users/user-new/user-new.component';
+import { UserUpdateComponent } from './Components/users/user-update/user-update.component';
+import { UserDetailsComponent } from './Components/users/user-details/user-details.component';
+import { UserListComponent } from './Components/users/user-list/user-list.component';
+import { SolvabilitiesComponent } from './Components/solvabilities/solvabilities.component';
+import { IncomesComponent } from './Components/incomes/incomes.component';
 import { ContratClientComponent } from './Components/contrat-client/contrat-client.component';
 import { ContartRenouvComponent } from './Components/contart-renouv/contart-renouv.component';
 
@@ -45,10 +57,54 @@ const routes: Routes = [
     {path:'contact',component:ContactComponent},
     {path:'payment',component:PaymentComponent},
   {path:'contratClient',component:ContratClientComponent},
-    
-  
-  {path:'menu',component:MenuComponent,children :[
-  
+  {path: 'login', component: LoginComponent},
+  {path: 'sign-up', component: SignUpComponent},
+  {path: 'forgot-password', component: ForgotPasswordComponent},
+  {path: 'reset_password', component: ResetPasswordComponent},
+
+
+  {path:'menu',component:MenuComponent,
+  canActivate: [AuthGuard],
+  canActivateChild: [AuthGuard],
+  data: {
+    allowedRole: ['ADMIN','INSURER']
+  },
+  children :[
+    {
+      path: 'users',
+      component: UsersComponent,
+      data: {
+        allowedRole: ['ADMIN']
+      },
+      children: [
+        {
+          path: '' ,
+          component: UserListComponent
+        },
+        {
+          path: 'new',
+          component: UserNewComponent
+        },
+        {
+          path: 'update/:id',
+          component: UserUpdateComponent,
+        },
+        {
+          path: 'details/:id',
+          component: UserDetailsComponent
+        }
+      ]
+    },
+    {path: 'solvabilities', component: SolvabilitiesComponent,
+      data: {
+          allowedRole: ['ADMIN']
+      }
+    },
+    {path: 'incomes', component: IncomesComponent,
+      data: {
+          allowedRole: ['ADMIN']
+      }
+    },
   {path:'addcredit',component:AddCreditComponent},
   {path:'listcredit',component:ListCreditComponent },
   {path:'modifiercredit/:id',component:ModifierCreditComponent},
@@ -64,18 +120,17 @@ const routes: Routes = [
   {path:'renouvcontract',component:ContartRenouvComponent},
   {path:'addcontract',component:AddContractComponent},
   {path:'modifcontract/:id',component:ModifContractComponent},
+
   //{path:'simulateur1/:id',component:Calcul1Component },
- 
+
   //{path:'simulateur2/:id',component:Calcul2Component },
- 
-  
 
 ]
 },
 {path:'',redirectTo:'homepage',pathMatch:'full'},
 {path:'**',component:NotFoundComponent}
 ];
-  
+
 
 
 
