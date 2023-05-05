@@ -1,6 +1,7 @@
 (function ($) {
     "use strict";
-
+    console.log('here')
+;    
     // Spinner
     var spinner = function () {
         setTimeout(function () {
@@ -105,8 +106,6 @@
                 items:3
             }
         }
-    });
-
-    
+    });    
 })(jQuery);
 

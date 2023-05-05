@@ -14,6 +14,13 @@ import { PaymentComponent } from './Components/payment/payment.component';
 import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
 import { AuthGuard } from './Guard/auth-guard.guard';
+import { UsersComponent } from './Components/users/users.component';
+import { UserNewComponent } from './Components/users/user-new/user-new.component';
+import { UserUpdateComponent } from './Components/users/user-update/user-update.component';
+import { UserDetailsComponent } from './Components/users/user-details/user-details.component';
+import { UserListComponent } from './Components/users/user-list/user-list.component';
+import { SolvabilitiesComponent } from './Components/solvabilities/solvabilities.component';
+import { IncomesComponent } from './Components/incomes/incomes.component';
 
 const routes: Routes = [
   {path:'homepage',component:HomePageComponent},
@@ -25,6 +32,41 @@ const routes: Routes = [
     allowedRole: ['ADMIN','INSURER']
   },
   children :[
+    {
+      path: 'users',
+      component: UsersComponent,
+      data: {
+        allowedRole: ['ADMIN']
+      },
+      children: [
+        {
+          path: '' ,
+          component: UserListComponent
+        },
+        {
+          path: 'new', 
+          component: UserNewComponent
+        },
+        {
+          path: 'update/:id',
+          component: UserUpdateComponent,
+        },
+        {
+          path: 'details/:id',
+          component: UserDetailsComponent
+        }
+      ]
+    },
+    {path: 'solvabilities', component: SolvabilitiesComponent, 
+      data: {
+          allowedRole: ['ADMIN']
+      }
+    },
+    {path: 'incomes', component: IncomesComponent, 
+      data: {
+          allowedRole: ['ADMIN']
+      }
+    },
     {path:'listcontract',component:ListecontractComponent},
     {path:'addcontract',component:AddContractComponent},
     {path:'modifcontract/:id',component:ModifContractComponent},

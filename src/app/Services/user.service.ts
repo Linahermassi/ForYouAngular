@@ -26,4 +26,34 @@ export class UserService {
       `${this.baseUri}/foryou/User/afficherUser`
     );
   }
+
+  delete(id: any)
+  {
+    return this.httpClient.delete<any>(
+      `${this.baseUri}/foryou/User/deleteUserById/${id}`
+    );
+  }
+
+  add(user: User)
+  {
+    return this.httpClient.post<any>(
+      `${this.baseUri}/foryou/register/${user.role}`,
+      user
+    )
+  }
+
+  get(id: number)
+  {
+    return this.httpClient.get<any>(
+      `${this.baseUri}/foryou/User/afficherUserAvecId/${id}`
+    )
+  }
+
+  edit(user: any)
+  {
+    return this.httpClient.put<any>(
+      `${this.baseUri}/foryou/User/modifierUser`,
+      user
+    );
+  }
 }

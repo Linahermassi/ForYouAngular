@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/Services/user.service';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-sign-up',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.css']
+  selector: 'app-user-new',
+  templateUrl: './user-new.component.html',
+  styleUrls: ['./user-new.component.css']
 })
-export class SignUpComponent implements OnInit {
+export class UserNewComponent {
   firstName: string;
   lastName: string;
   username: string;
@@ -19,15 +20,16 @@ export class SignUpComponent implements OnInit {
   confirmPassword: string;
   address:string;
   role: string;
-  public signUpForm: FormGroup;
+  public form: FormGroup;
 
   constructor(
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private toaster: ToastrService
   ){}
 
   ngOnInit(): void {
-    this.signUpForm = new FormGroup({
+    this.form = new FormGroup({
       firstName:new FormControl(null, Validators.required),
       lastName:new FormControl(null, Validators.required),
       username:new FormControl(null, Validators.required),
@@ -41,20 +43,20 @@ export class SignUpComponent implements OnInit {
     });
   }
 
-  signUp()
+  add()
   {
-    if(this.signUpForm.invalid)
+    if(this.form.invalid)
     {
-      this.markFormGroupTouched(this.signUpForm)
+      this.markFormGroupTouched(this.form)
     }
 
-   if(this.signUpForm.valid) { 
+   if(this.form.valid) { 
 
     if(this.password !== this.confirmPassword) {
       alert('pwd not equals');
       return;
     }
-    this.userService.register(
+    this.userService.add(
       {
         username: this.username,
         firstName: this.firstName,
@@ -67,11 +69,13 @@ export class SignUpComponent implements OnInit {
         birthDate: this.birthdate
       }
     ).subscribe({
-      next: () => this.router.navigate(['/login'])
+      next: () => {
+        this.toaster.success('user added successfully');
+        this.router.navigate(['/menu/users'])
+      }
     })
   }
-  }
-  
+  } 
   markFormGroupTouched(formGroup: FormGroup): void {
     ( Object as any).values(formGroup.controls).forEach((control: any) => {
         control.markAsTouched();
@@ -79,5 +83,5 @@ export class SignUpComponent implements OnInit {
             this.markFormGroupTouched(control);
         }
     });
-  }  
+}
 }

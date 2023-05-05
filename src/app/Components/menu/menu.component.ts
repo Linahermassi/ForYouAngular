@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContractModel } from 'src/app/Models/ContractModel';
 import { ContractService } from 'src/app/Services/contract.service';
+import { LoginService } from 'src/app/Services/login.service';
 
 @Component({
   selector: 'app-menu',
@@ -8,10 +9,11 @@ import { ContractService } from 'src/app/Services/contract.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit{
+  loggedIn: boolean = false;
   listContract!: ContractModel[];
-  constructor( private _service:ContractService){}
+  constructor( private _service:ContractService, private loginService: LoginService){}
   ngOnInit(): void {
-
+    this.loggedIn = this.loginService.loggedIn();
   }
 
   GetContracts(){
@@ -19,4 +21,9 @@ export class MenuComponent implements OnInit{
     this.listContract=res});
   }
 
+  
+  logout()
+  {
+    this.loginService.logout();
+  }
 }

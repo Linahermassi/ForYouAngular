@@ -30,6 +30,9 @@ export class LoginComponent implements OnInit {
 
   logIn()
   {
+    if(this.loginForm.invalid) {
+      this.markFormGroupTouched(this.loginForm)
+    }
     if(this.loginForm.valid) {
       this.loginService.login(new Login(
         this.username,
@@ -47,4 +50,12 @@ export class LoginComponent implements OnInit {
       })
     }
   }
+  markFormGroupTouched(formGroup: FormGroup): void {
+    ( Object as any).values(formGroup.controls).forEach((control: any) => {
+        control.markAsTouched();
+        if (control.controls) {
+            this.markFormGroupTouched(control);
+        }
+    });
+}
 }

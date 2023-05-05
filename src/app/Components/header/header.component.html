@@ -108,6 +108,7 @@
             </div>
             <a href="contact.html" class="nav-item nav-link">Contactez-nous</a>
         </div>
-        <a routerLink="/login" class="btn btn-sm btn-light rounded-pill py-2 px-4 d-none d-lg-block">Se connecter</a>
+        <a *ngIf="!loggedIn" routerLink="/login" class="btn btn-sm btn-light rounded-pill py-2 px-4 d-none d-lg-block">Login</a>
+        <a *ngIf="loggedIn" (click)="logout()" class="btn btn-sm btn-light rounded-pill py-2 px-4 d-none d-lg-block">Logout</a>
    </div>
 </nav>

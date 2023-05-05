@@ -1,0 +1,86 @@
+
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Incomes</h1>
+          </div>
+        </div>
+      </div>
+</section>
+<section class="content">
+    <!-- Default box -->
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Incomes</h3>     
+            </div>
+            <div class="card-body">
+                <h2>Stats</h2>
+                <div class="row g-0 justify-content-center">
+                    <div >
+                        <form [formGroup]="form">
+                            <div class="row">
+                                <div class="col-md-12 mb-2">
+                                    <div class="form-group">
+                                        <label for="totalIncome">Total income</label>
+                                        <input 
+                                        [(ngModel)]="totalIncome"
+                                        type="number" 
+                                        class="form-control" 
+                                        formControlName="totalIncome" placeholder="total Income">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-2">
+                                    <div class="form-group">
+                                        <label for="totalExpenses">Total expenses</label>
+                                        <input 
+                                        [(ngModel)]="totalExpenses"
+                                        type="number" 
+                                        class="form-control" 
+                                        formControlName="totalExpenses" placeholder="Total expenses">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-2">
+                                    <div class="form-group">
+                                        <label for="">product</label>
+                                        <input 
+                                        [(ngModel)]="product"
+                                        type="text" 
+                                        class="form-control" 
+                                        formControlName="product" placeholder="product">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <button class="btn btn-primary" (click)="new()">Calculate</button>
+                                </div>
+                            </div>    
+                        </form>
+                    </div>
+                </div>
+            </div>    
+        </div>  
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Charts</h3>     
+              </div>
+            <div class="card-body">
+                <div class="col-md-12 mb-2">
+                    <h2>Credit chart</h2>
+                    <div id="credit" style="max-width:700px; height:400px"></div>
+                </div>
+                <div class="col-md-12 mb-2">
+                    <h2>agriculture chart</h2>
+                    <div id="agriculture" style="max-width:700px; height:400px"></div>
+                </div>
+                <div class="col-md-12 mb-2">
+                    <h2>automobile chart</h2>
+                    <div id="automobile" style="max-width:700px; height:400px"></div>
+                </div>
+            </div>  
+        </div>  
+    </div>
+</section>     
