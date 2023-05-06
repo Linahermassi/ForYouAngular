@@ -8,14 +8,21 @@ import { CreditService } from 'src/app/Services/credit.service';
   styleUrls: ['./calcul2.component.css']
 })
 export class Calcul2Component implements OnInit{
-  
+
   list!:number[][];
+  id!:any;
   constructor( private _service:CreditService, private route :Router,private route1 :ActivatedRoute){}
   ngOnInit(): void {
-  this.Calcul2(this.route1.snapshot.paramMap.get('id'))
+     this.id = this.route1.snapshot.paramMap.get('id');
+    this.Calcul2(this.id);
+    this.Status(this.id);
   }
   Calcul2(id:any){
     this._service.Calcul2(id).subscribe((res=>{console.log(res);
       this.list=res}));
-  }  
+  }
+  Status(id:any){
+    this._service.Status(id).subscribe();
+
+  }
 }

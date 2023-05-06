@@ -19,10 +19,10 @@ export class AddEventComponent implements OnInit{
   ngOnInit(): void {
   }
   AddEvent(){
-    return this.c.AddEvent(this.event).subscribe(()=>this._router.navigateByUrl("/menu/listEvent"));
+    return this.c.AddEvent(this.event).subscribe(()=>this._router.navigateByUrl("/menu/listevent"));
   }
 
-  
+
 
 
 }

@@ -15,6 +15,7 @@
                 <p class="card-text" style="font-size: 22px;">Montant : {{Credit.amount}} DH</p>
                 <p class="card-text" style="font-size: 22px;">Date de début : {{Credit.startDate}}</p>
                 <p class="card-text" style="font-size: 22px;">Date de fin : {{Credit.endtDate}}</p>
+                <p class="card-text" style="font-size: 22px;">Nombre d'années : {{Credit.nb_years}}</p>
                 <div class="mt-4 text-center">
                   <button class="btn btn-primary mr-2" style="font-size: 24px;" [routerLink]="['/simulateur1/', Credit.creditId]">Simulateur 1</button>
                   <button class="btn btn-primary" style="font-size: 24px;" [routerLink]="['/simulateur2/', Credit.creditId]">Simulateur 2</button>
@@ -26,7 +27,7 @@
       </div>
     </div>
   </div>
-  
+
 
   <app-footer></app-footer>
 

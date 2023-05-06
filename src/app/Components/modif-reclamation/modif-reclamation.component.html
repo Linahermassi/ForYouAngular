@@ -1,71 +1,71 @@
-<body>
-    <!-- Main content -->
-    <section class="content">
-      <br>
-      <div class="container-fluid">
-        <h4>Ajouter une nouvelle reclamation :</h4><br>
-        <div class="row justify-content-center">
-          <!-- left column -->
-          <div class="col-md-12">
-            <!-- general form elements -->
-            <div class="card card-primary"style="background-color:#ffffff;">
-              <div class="card-header" style="background-color: #14B5E9;">
-                <h3 class="text-center mb-5" style="color: #1E1261">Formulaire d'ajout</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
+<!DOCTYPE html>
+<html>
+
+
+
+
+
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">
+              <h1 class="text-center mb-5" style="color: #1E1261">Modifier une réclamation</h1>
+            </div>
+            <div class="card-body">
               <form>
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label>Titre </label>
-                        <input type="text" name="title" [(ngModel)]="reclamation.title" class="form-control" id="exampledate1" placeholder="Entrer le titre">
-                      </div>
-                      <div class="form-group">
-                        <label>Catégorie</label>
-                        <input type="text" name="category" [(ngModel)]="reclamation.category" class="form-control" id="exampledate2" placeholder="Entrer la catégorie">
-                      </div>
-                      <div class="form-group">
-                        <label>Date de création</label>
-                        <input type="date" name="createdDate" [(ngModel)]="reclamation.creationDate" class="form-control" placeholder="Entrer la date de création">
-                      </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="Title">Titre</label>
+                      <input type="text" name="title" [(ngModel)]="reclamation.title" class="form-control" id="exampledate1" placeholder="Entrer le titre">
                     </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label>Détails</label>
-                        <input type="text" name="details" [(ngModel)]="reclamation.details" class="form-control" id="exampledate3" placeholder="Entrer les détails de votre réclamation">
-                      </div>
-                      <div class="form-group">
-                        <label>État</label>
-                        <select name="etat" [(ngModel)]="reclamation.etat" class="form-control">
-                          <option value="sentiment_very_dissatisfied">Sentiment très mécontent</option>
-                          <option value="sentiment_dissatisfied">Sentiment mécontent</option>
-                          <option value="sentiment_neutral">Sentiment neutre</option>
-                          <option value="sentiment_satisfied">Sentiment satisfait</option>
-                          <option value="sentiment_very_satisfied">Sentiment très satisfait</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <label>Statut</label>
-                        <select name="statut" [(ngModel)]="reclamation.status" class="form-control">
-                          <option value="EN_ATTENTE">En attente</option>
-                          <option value="EN_COURS">En cours</option>
-                          <option value="TRAITEE">Traitée</option>
-                        </select>
-                      </div>
+                    <div class="form-group">
+                      <label for="category">Catégorie</label>
+                      <input type="text" name="category" [(ngModel)]="reclamation.category" class="form-control" id="exampledate2" placeholder="Entrer la catégorie">
+                    </div>
+                    <div class="form-group">
+                      <label for="creationDate">Date de création</label>
+                      <input type="date" name="createdDate" [(ngModel)]="reclamation.creationDate" class="form-control" placeholder="Entrer la date de création">
                     </div>
                   </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="creationDate">Détails</label>
+                      <input type="text" name="details" [(ngModel)]="reclamation.details" class="form-control" id="exampledate3" placeholder="Entrer les détails de votre réclamation">
+                    </div>
+                    <div class="form-group">
+                      <label for="etat">État</label>
+                      <select name="etat" [(ngModel)]="reclamation.etat" class="form-control">
+                        <option value="sentiment_very_dissatisfied">Sentiment très mécontent</option>
+                        <option value="sentiment_dissatisfied">Sentiment mécontent</option>
+                        <option value="sentiment_neutral">Sentiment neutre</option>
+                        <option value="sentiment_satisfied">Sentiment satisfait</option>
+                        <option value="sentiment_very_satisfied">Sentiment très satisfait</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="Statut">Statut</label>
+                      <select name="statut" [(ngModel)]="reclamation.status" class="form-control">
+                        <option value="EN_ATTENTE">En attente</option>
+                        <option value="EN_COURS">En cours</option>
+                        <option value="TRAITEE">Traitée</option>
+                      </select>
+                    </div>
+                  </div>
+
+
+                <div class="card-footer">
+                  <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-sm btn-light rounded-pill py-2 px-4" style="color: #f6f6f8; background-color:#1E1261"  onclick="history.back()">Retour</button>
+                    <button type="submit" class="btn btn-sm btn-light rounded-pill py-2 px-4" style="color: #f6f6f8; background-color:#1E1261" (click)="EditReclamations()">Modifier</button>
+                  </div>
+
+
                 </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <button type="button" class="btn btn-primary" style="background-color: #14B5E9;border-color: #14B5E9;margin-right: 100px;" onclick="history.back()">Retour</button>
-                    <button type="submit" class="btn btn-primary" style="background-color: #14B5E9;border-color: #14B5E9;" (click)="EditReclamations()">Modifier</button>
-                </div>
-              </form>
-              
+
+
             </div>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
-  </body>
+
+    

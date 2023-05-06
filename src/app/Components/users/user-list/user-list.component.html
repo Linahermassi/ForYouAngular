@@ -3,7 +3,7 @@
 <div class="container-fluid">
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Users</h3>     
+        <h3 class="card-title">Users</h3>
       </div>
        <div class="card-body table-responsive p-0" >
         <table class="table table-head-fixed text-nowrap">
@@ -16,7 +16,6 @@
               <th>phone</th>
               <th>birthdate</th>
               <th>address</th>
-              <th>Role</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -28,13 +27,12 @@
                 <td>{{user.email}}</td>
                 <td>{{user.phone}}</td>
                 <td>{{user.birthDate}}</td>
-                <td>{{user.address}}</td>
-                <td>{{user.role}}</td>
+                <td>{{user.adress}}</td>
                  <td>
                     <i class="fa fa-trash" style="color: red;cursor: pointer;" (click)="delete(user.userId)"></i>
                     <a [routerLink]="['/menu/users/update', user.userId]"><i class="fa fa-edit" style="cursor: pointer;"></i></a>
                  </td>
-              </tr> 
+              </tr>
             </tbody>
         </table>
       </div>

@@ -48,7 +48,7 @@ export class SignUpComponent implements OnInit {
       this.markFormGroupTouched(this.signUpForm)
     }
 
-   if(this.signUpForm.valid) { 
+   if(this.signUpForm.valid) {
 
     if(this.password !== this.confirmPassword) {
       alert('pwd not equals');
@@ -71,7 +71,7 @@ export class SignUpComponent implements OnInit {
     })
   }
   }
-  
+
   markFormGroupTouched(formGroup: FormGroup): void {
     ( Object as any).values(formGroup.controls).forEach((control: any) => {
         control.markAsTouched();
@@ -79,5 +79,5 @@ export class SignUpComponent implements OnInit {
             this.markFormGroupTouched(control);
         }
     });
-  }  
+  }
 }

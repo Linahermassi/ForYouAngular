@@ -96,14 +96,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav me-auto p-3 p-lg-0">
-        <a href="service.html" class="nav-item nav-link">Acceuil</a>
+        <a href="homepage" class="nav-item nav-link">Acceuil</a>
         <a
           href="about.html"
           class="nav-item nav-link active"
           style="color: #14b5e9"
           >Espace Admin</a
         >
-        <a href="service.html" class="nav-item nav-link">Espace Utilisateur</a>
       </div>
       <a
         href="#"
@@ -139,33 +138,50 @@
                with font-awesome or any other icon font library -->
             <li class="nav-item menu-open">
               <a
-                href="#"
+                href="/menu/solvabilities"
                 class="nav-link active"
                 style="background-color: #14b5e9"
               >
-                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <i class="nav-icon fas fa-chart-bar"></i>
                 <p>
-                  Dashboard
+                  Statistiques
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="./index.html" class="nav-link active">
+                  <a href="/menu/solvabilities" class="nav-link active">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Dashboard v1</p>
+                    <p>Solvabilités</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./index2.html" class="nav-link">
+                  <a href="/menu/incomes" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Dashboard v2</p>
+                    <p>Revenues Net</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="fas fa-users nav-icon"></i>
+                <p>
+                  Gestion des Utilisateurs
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="/menu/users/new" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Ajouter utilisateurs</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./index3.html" class="nav-link">
+                  <a href="menu/users" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Dashboard v3</p>
+                    <p>Afficher les utilisateurs</p>
                   </a>
                 </li>
               </ul>
@@ -189,6 +205,12 @@
                   <a href="menu/listcredit" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Afficher les credits</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="menu/credit" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Rentabilité et Profit</p>
                   </a>
                 </li>
               </ul>
@@ -237,7 +259,25 @@
                 <li class="nav-item">
                   <a href="menu/listevent" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>List Evenement</p>
+                    <p>Liste des évènements</p>
+                  </a>
+                </li>
+
+              </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="/menu/listinscri" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Liste des inscriptions</p>
+                  </a>
+                </li>
+
+              </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="menu/addevent" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Nouvel évènement</p>
                   </a>
                 </li>
 

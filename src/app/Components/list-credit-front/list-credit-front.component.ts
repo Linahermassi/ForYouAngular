@@ -11,12 +11,12 @@ import { CreditService } from 'src/app/Services/credit.service';
 export class ListCreditFrontComponent implements OnInit{
   Credit!: CreditModel;
 
- 
+
   constructor( private _service:CreditService, private route :Router,private route1 :ActivatedRoute){}
   ngOnInit(): void {
-    this.GetCredit(58)
+    this.GetCredit(3)
     //this.GetCredit(this.route1.snapshot.paramMap.get('id'))
-   
+
   }
 
   GetCredit(id:any){

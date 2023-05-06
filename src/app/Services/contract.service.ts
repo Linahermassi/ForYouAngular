@@ -12,6 +12,7 @@ export class ContractService {
   readonly Endpoint_Deletecontract ="/foryou/Contract/SupprimerContractById/"
   readonly Endpoint_FindcontractByid ="/foryou/Contract/afficherContractById/"
   readonly Endpoint_GetRenewableContract ="/foryou/Contract/afficherRenewableContract"
+  readonly Endpoint_GetCurrentUsername ="/foryou/Contract/CurrentUser"
   readonly Endpoint_GetScore ="/foryou/Score/Scoring/"
 
 
@@ -39,6 +40,10 @@ export class ContractService {
   getScore(idc:number,idco:number){
     return this.httpClient.get<number[]>(this.Api_Url+this.Endpoint_GetScore+idc+"/"+idco)
   }
+  getCurrentUsername(){
+    return this.httpClient.get<String>(this.Api_Url+this.Endpoint_GetCurrentUsername)
+  }
+
 
 }
 
